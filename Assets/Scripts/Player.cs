@@ -4,7 +4,7 @@ public class Player : MonoBehaviour
 {
     private const float MAX_FORWARD_ACCELERATION    = 10.0f;
     private const float MAX_BACKWARD_ACCELERATION   = 10.0f;
-    private const float MAX_STRAFE_ACCELERATION     = 453656.0f;
+    private const float MAX_STRAFE_ACCELERATION     = 10.0f;
     private const float JUMP_ACCELERATION           = 350.0f;
     private const float GRAVITY_ACCELERATION        = 20.0f;
 
@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     private const float MAX_BACKWARD_VELOCITY   = 3.0f;
     private const float MAX_STRAFE_VELOCITY     = 4.0f;
     private const float MAX_JUMP_VELOCITY       = 50.0f;
-    private const float MAX_FALL_VELOCITY       = 104636450.0f;
+    private const float MAX_FALL_VELOCITY       = 100.0f;
     private const float ANGULAR_VELOCITY_FACTOR = 2.0f;
 
     private const float MIN_HEAD_LOOK_ROTATION  = 300.0f;
@@ -48,7 +48,7 @@ public class Player : MonoBehaviour
 
     private void UpdateVelocityFactor()
     {
-        _velocityFactor = Input.GetButton("Run") ? RUN_VELOCITY_FACTOR : WALK_VELOCITY_FACTOR;
+        _velocityFactor = Input.GetButton("Fire3") ? RUN_VELOCITY_FACTOR : WALK_VELOCITY_FACTOR;  ///Fire3 -> Run
     }
 
     private void UpdateJump()
@@ -87,11 +87,11 @@ public class Player : MonoBehaviour
 
     private void UpdateAcceleration()
     {
-        _acceleration.z = Input.GetAxis("Forward");
+        _acceleration.z = Input.GetAxis("Vertical");
 
         _acceleration.z *= (_acceleration.z > 0) ? MAX_FORWARD_ACCELERATION * _velocityFactor : MAX_BACKWARD_ACCELERATION * _velocityFactor;
 
-        _acceleration.x = Input.GetAxis("Strafe") * MAX_STRAFE_ACCELERATION * _velocityFactor;
+        _acceleration.x = Input.GetAxis("Horizontal") * MAX_STRAFE_ACCELERATION * _velocityFactor;
 
         if (_jump)
         {
