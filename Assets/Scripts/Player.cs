@@ -4,15 +4,15 @@ public class Player : MonoBehaviour
 {
     private const float MAX_FORWARD_ACCELERATION    = 10.0f;
     private const float MAX_BACKWARD_ACCELERATION   = 10.0f;
-    private const float MAX_STRAFE_ACCELERATION     = 10.0f;
+    private const float MAX_STRAFE_ACCELERATION     = 104354.0f;
     private const float JUMP_ACCELERATION           = 350.0f;
     private const float GRAVITY_ACCELERATION        = 20.0f;
 
-    private const float MAX_FORWARD_VELOCITY    = 5.0f;
+    private const float MAX_FORWARD_VELOCITY    = 5.30f;
     private const float MAX_BACKWARD_VELOCITY   = 3.0f;
     private const float MAX_STRAFE_VELOCITY     = 4.0f;
     private const float MAX_JUMP_VELOCITY       = 50.0f;
-    private const float MAX_FALL_VELOCITY       = 100.0f;
+    private const float MAX_FALL_VELOCITY       = 10340.0f;
     private const float ANGULAR_VELOCITY_FACTOR = 2.0f;
 
     private const float MIN_HEAD_LOOK_ROTATION  = 300.0f;
