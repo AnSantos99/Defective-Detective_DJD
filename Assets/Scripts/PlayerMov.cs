@@ -4,21 +4,20 @@ using UnityEngine;
 
 public class PlayerMov : MonoBehaviour
 {
-    [SerializeField]
-    private string horizontalInputName;
-    [SerializeField]
-    private string verticalInputName;
-    [SerializeField]
-    private float movementSpeed;
+    [SerializeField]private string horizontalInputName;
+    [SerializeField]private string verticalInputName;
+
+    [SerializeField]private float walkSpeed, runSpeed;
+    [SerializeField]private float runBuildup;
+    [SerializeField]private KeyCode runKey;
+
+    [SerializeField]private float movementSpeed;
 
     private CharacterController charController;
 
-    [SerializeField]
-    private AnimationCurve jumpFallOff;
-    [SerializeField]
-    private float jumpMultiplier;
-    [SerializeField]
-    private KeyCode jumpKey;
+    [SerializeField]private AnimationCurve jumpFallOff;
+    [SerializeField]private float jumpMultiplier;
+    [SerializeField]private KeyCode jumpKey;
 
     private bool isJumping;
 
@@ -42,8 +41,21 @@ public class PlayerMov : MonoBehaviour
 
         charController.SimpleMove(Vector3.ClampMagnitude(forwardMovement + rightMovement, 1.0f) * movementSpeed);
 
-        JumpInput();
+        SetMvementSpeed();
 
+        Debug.Log(movementSpeed);
+        JumpInput();
+    }
+
+    private void SetMvementSpeed()
+    {
+        if (Input.GetKey(runKey))
+        {
+            movementSpeed = Mathf.Lerp(movementSpeed, runSpeed, Time.deltaTime * runBuildup);
+            Debug.Log("mo");
+         }
+        else
+            movementSpeed = Mathf.Lerp(movementSpeed, walkSpeed, Time.deltaTime * runBuildup);
     }
 
     private void JumpInput()
