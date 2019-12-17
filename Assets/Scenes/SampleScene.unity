@@ -2388,7 +2388,6 @@ GameObject:
   - component: {fileID: 1176397194}
   - component: {fileID: 1176397193}
   - component: {fileID: 1176397192}
-  - component: {fileID: 1176397191}
   - component: {fileID: 1176397199}
   - component: {fileID: 1176397196}
   - component: {fileID: 1176397197}
@@ -2401,18 +2400,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1176397191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1176397190}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 148714670f27a0b4e9f4b863d040114d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!136 &1176397192
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2564,10 +2551,9 @@ MonoBehaviour:
   horizontalInputName: Horizontal
   verticalInputName: Vertical
   walkSpeed: 6
-  runSpeed: 15
-  runBuildup: 1
+  runSpeed: 10
+  runBuildUpSpeed: 1
   runKey: 304
-  movementSpeed: 3
   jumpFallOff:
     serializedVersion: 2
     m_Curve:

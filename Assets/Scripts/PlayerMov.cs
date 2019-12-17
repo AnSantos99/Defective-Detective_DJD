@@ -8,10 +8,10 @@ public class PlayerMov : MonoBehaviour
     [SerializeField]private string verticalInputName;
 
     [SerializeField]private float walkSpeed, runSpeed;
-    [SerializeField]private float runBuildup;
+    [SerializeField]private float runBuildUpSpeed;
     [SerializeField]private KeyCode runKey;
 
-    [SerializeField]private float movementSpeed;
+    private float movementSpeed;
 
     private CharacterController charController;
 
@@ -41,16 +41,16 @@ public class PlayerMov : MonoBehaviour
 
         charController.SimpleMove(Vector3.ClampMagnitude(forwardMovement + rightMovement, 1.0f) * movementSpeed);
 
-        SetMvementSpeed();
+        SetMovementSpeed();
         JumpInput();
     }
 
-    private void SetMvementSpeed()
+    private void SetMovementSpeed()
     {
         if (Input.GetKey(runKey))
-            movementSpeed = Mathf.Lerp(movementSpeed, runSpeed, Time.deltaTime * runBuildup);
+            movementSpeed = Mathf.Lerp(movementSpeed, runSpeed, Time.deltaTime * runBuildUpSpeed);
         else
-            movementSpeed = Mathf.Lerp(movementSpeed, walkSpeed, Time.deltaTime * runBuildup);
+            movementSpeed = Mathf.Clamp(movementSpeed, walkSpeed, Time.deltaTime * runBuildUpSpeed);
     }
 
     private void JumpInput()
