@@ -42,18 +42,13 @@ public class PlayerMov : MonoBehaviour
         charController.SimpleMove(Vector3.ClampMagnitude(forwardMovement + rightMovement, 1.0f) * movementSpeed);
 
         SetMvementSpeed();
-
-        Debug.Log(movementSpeed);
         JumpInput();
     }
 
     private void SetMvementSpeed()
     {
         if (Input.GetKey(runKey))
-        {
             movementSpeed = Mathf.Lerp(movementSpeed, runSpeed, Time.deltaTime * runBuildup);
-            Debug.Log("mo");
-         }
         else
             movementSpeed = Mathf.Lerp(movementSpeed, walkSpeed, Time.deltaTime * runBuildup);
     }
