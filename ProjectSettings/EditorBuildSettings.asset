@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MechanicJoin.unity
     guid: 75341aaddb15b9d4ea73cc09d5988f2a
+  - enabled: 1
+    path: Assets/Scenes/LevelDesign.unity
+    guid: f25c4f042a2a8384b9b9ad17e7b17657
+  - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 03a6f69011600284ea8c142b81645a19
   m_configObjects: {}

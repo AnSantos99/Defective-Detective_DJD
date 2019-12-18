@@ -3285,7 +3285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4900e4057a3c9244ac9d79b55cfb3db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirstSceneName: MechanicJoin
+  FirstSceneName: LevelDesign
   MainPanel: {fileID: 740114791}
   SettingsPanel: {fileID: 1906058061}
   InstructionsPanel: {fileID: 317816438}
