@@ -13,17 +13,12 @@ public class Interactive : MonoBehaviour
     public Interactive[] inventoryRequirements;
     public Interactive[] activationChain;
     public Interactive[] interactionChain;
-    public GameObject zenNormal;
-    public GameObject zenNervous;
 
     private Animator _animator;
 
     public void Start()
     {
         _animator = GetComponent<Animator>();
-
-        zenNormal = GetComponent<GameObject>();
-        zenNervous = GetComponent<GameObject>();
     }
 
     public void Activate()
@@ -36,9 +31,6 @@ public class Interactive : MonoBehaviour
         if (_animator != null)
         {
             _animator.SetTrigger("Interact");
-
-            zenNormal.SetActive(false);
-            zenNervous.SetActive(true);
         }
 
         if (isActive)
