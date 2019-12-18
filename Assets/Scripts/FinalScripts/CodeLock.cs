@@ -12,6 +12,8 @@ public class CodeLock : MonoBehaviour
 
     public Transform toOpen;
 
+    public GameObject caseInside;
+
     private void Start()
     {
         codeLength = code.Length;
@@ -36,6 +38,8 @@ public class CodeLock : MonoBehaviour
         yield return new WaitForSeconds(4);
 
         toOpen.Rotate(new Vector3(-90, 0, 0), Space.World);
+
+        caseInside.SetActive(true);
     }
 
     public void SetValue(string value)
