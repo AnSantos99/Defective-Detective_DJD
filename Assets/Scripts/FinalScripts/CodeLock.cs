@@ -27,6 +27,7 @@ public class CodeLock : MonoBehaviour
         if(attemptedCode == code)
         {
             StartCoroutine(Open());
+            caseInside.SetActive(true);
         }
         else
         {
@@ -43,7 +44,8 @@ public class CodeLock : MonoBehaviour
 
         _animator.SetBool("Open", false);
 
-        caseInside.SetActive(true);
+
+
     }
 
     public void SetValue(string value)
