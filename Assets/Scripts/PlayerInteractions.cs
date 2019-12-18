@@ -123,4 +123,12 @@ public class PlayerInteractions : MonoBehaviour
         return _inventory.Contains(item);
     }
 
+    private void UpdateInventoryIcons()
+    {
+        canvasManager.ClearInventoryIcons();
+
+        for (int i = 0; i < _inventory.Count; ++i)
+            canvasManager.SetInventoryIcon(i, _inventory[i].inventoryIcon);
+    }
+
 }

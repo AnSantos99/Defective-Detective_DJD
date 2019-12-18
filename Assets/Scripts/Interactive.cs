@@ -7,6 +7,7 @@ public class Interactive : MonoBehaviour
     public bool isActive;
     public InteractiveType type;
     public string inventoryName;
+    public Sprite inventoryIcon;
     public string requirementText;
     public string interactionText;
     public Interactive[] inventoryRequirements;

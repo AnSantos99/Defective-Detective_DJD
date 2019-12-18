@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MechanicJoin.unity
+    guid: 75341aaddb15b9d4ea73cc09d5988f2a
   m_configObjects: {}
