@@ -17,8 +17,6 @@ public class CodeLock : MonoBehaviour
     private void Start()
     {
         codeLength = code.Length;
-
-       // caseInside = GetComponentInChildren<GameObject>();
     }
 
     void CheckCode()
