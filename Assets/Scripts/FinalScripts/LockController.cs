@@ -5,7 +5,6 @@ using UnityEngine;
 public class LockController : MonoBehaviour
 {
     CodeLock codeLock;
-    private GameObject cursor;
 
     int reachRange = 100;
     
