@@ -29,7 +29,9 @@ public class Interactive : MonoBehaviour
     public void Interact()
     {
         if (_animator != null)
+        {
             _animator.SetTrigger("Interact");
+        }
 
         if (isActive)
         {
@@ -37,7 +39,9 @@ public class Interactive : MonoBehaviour
             ProcessInteractionChain();
 
             if (type == InteractiveType.INTERACT_ONCE)
+            {
                 GetComponent<Collider>().enabled = false;
+            }
         }
     }
 

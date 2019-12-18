@@ -14,8 +14,11 @@ public class CodeLock : MonoBehaviour
 
     public GameObject caseInside;
 
+    private Animator _animator;
+
     private void Start()
     {
+        _animator = GetComponentInParent<Animator>();
         codeLength = code.Length;
     }
 
@@ -33,11 +36,12 @@ public class CodeLock : MonoBehaviour
 
     IEnumerator Open()  //'animation' of open & close
     {
-        toOpen.Rotate(new Vector3(90, 0, 0), Space.World);
+
+        _animator.SetBool("Open", true);
 
         yield return new WaitForSeconds(4);
 
-        toOpen.Rotate(new Vector3(-90, 0, 0), Space.World);
+        _animator.SetBool("Open", false);
 
         caseInside.SetActive(true);
     }

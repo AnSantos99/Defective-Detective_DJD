@@ -1066,7 +1066,7 @@ GameObject:
   - component: {fileID: 353685110}
   - component: {fileID: 353685109}
   - component: {fileID: 353685113}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1335,7 +1335,7 @@ Camera:
   m_GameObject: {fileID: 536935121}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 4
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -1377,7 +1377,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 536935121}
   m_LocalRotation: {x: 0.011997047, y: 0.0104972925, z: -0.00012597388, w: 0.9998729}
-  m_LocalPosition: {x: 8.555799, y: 0.6303694, z: 2.7208972}
+  m_LocalPosition: {x: 7.946, y: 0.6303694, z: 2.734}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
