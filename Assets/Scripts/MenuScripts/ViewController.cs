@@ -46,6 +46,7 @@ public class ViewController : MonoBehaviour
         {
             Time.timeScale = 1.0f;
             HideMouseCursor();
+
         }
 
         inventory.SetActive(!inventory.activeInHierarchy);

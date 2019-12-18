@@ -111,11 +111,13 @@ public class PlayerInteractions : MonoBehaviour
     private void AddToInventory(Interactive item)
     {
         _inventory.Add(item);
+        UpdateInventoryIcons();
     }
 
     private void RemoveFromInventory(Interactive item)
     {
         _inventory.Remove(item);
+        UpdateInventoryIcons();
     }
 
     private bool HasInInventory(Interactive item)
