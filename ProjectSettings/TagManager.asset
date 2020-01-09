@@ -6,6 +6,7 @@ TagManager:
   tags:
   - NPC
   - viewManager
+  - Touchable
   layers:
   - Default
   - TransparentFX

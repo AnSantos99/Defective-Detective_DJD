@@ -8,6 +8,7 @@ public class ViewController : MonoBehaviour
     public GameObject player;
     public GameObject pauseMenu;
     public GameObject inputMenu;
+    public GameObject bookPanel;
 
     void Start()
     {
@@ -21,11 +22,6 @@ public class ViewController : MonoBehaviour
             ToggleInventory(false);
         }
 
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            ToggleInputPanel(false);
-        }
-
         if (Input.GetKeyDown(KeyCode.P))
         {
             TogglePauseMenu(false);
@@ -37,7 +33,14 @@ public class ViewController : MonoBehaviour
         inputMenu.SetActive(!inputMenu.activeInHierarchy);
         Cursor.visible = inputMenu.activeInHierarchy;
         StopPlayerMotion(!inputMenu.activeInHierarchy);
-    } 
+    }
+
+    public void ToggleBookPanel(bool condition)
+    {
+        bookPanel.SetActive(!bookPanel.activeInHierarchy);
+        Cursor.visible = bookPanel.activeInHierarchy;
+        StopPlayerMotion(!bookPanel.activeInHierarchy);
+    }
 
     public void TogglePauseMenu(bool condition)
     {

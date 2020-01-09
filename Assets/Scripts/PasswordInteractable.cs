@@ -2,13 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ReadObjects : MonoBehaviour
+public class PasswordInteractable : MonoBehaviour
 {
-    //public GameObject displayImage;
     private GameObject view;
     private ViewController viewScript;
-
-
 
     void Start()
     {

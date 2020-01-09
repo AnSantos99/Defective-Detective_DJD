@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ReadDoc : MonoBehaviour
+public class InteractableObjects : MonoBehaviour
 {
-
     private GameObject Interactable;
 
     void Touch()
