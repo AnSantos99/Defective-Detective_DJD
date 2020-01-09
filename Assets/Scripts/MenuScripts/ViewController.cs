@@ -7,6 +7,7 @@ public class ViewController : MonoBehaviour
     public GameObject inventory;
     public GameObject player;
     public GameObject pauseMenu;
+    public GameObject inputMenu;
 
     void Start()
     {
@@ -20,11 +21,23 @@ public class ViewController : MonoBehaviour
             ToggleInventory(false);
         }
 
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            ToggleInputPanel(false);
+        }
+
         if (Input.GetKeyDown(KeyCode.P))
         {
             TogglePauseMenu(false);
         }
     }
+
+    public void ToggleInputPanel(bool condition)
+    {
+        inputMenu.SetActive(!inputMenu.activeInHierarchy);
+        Cursor.visible = inputMenu.activeInHierarchy;
+        StopPlayerMotion(!inputMenu.activeInHierarchy);
+    } 
 
     public void TogglePauseMenu(bool condition)
     {
