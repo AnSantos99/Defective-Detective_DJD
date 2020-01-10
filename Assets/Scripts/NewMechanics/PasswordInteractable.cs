@@ -14,8 +14,8 @@ public class PasswordInteractable : MonoBehaviour
     }
 
     void OnTouch()
-    {       
-        viewScript.ToggleInputPanel(false);
+    {   if(viewScript.passwordCorrect == false)
+            viewScript.ToggleInputPanel(false);
     }
 
     void UnTouch()
