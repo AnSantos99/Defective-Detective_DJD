@@ -23,6 +23,7 @@ public class CanvasManager : MonoBehaviour
         interactionPanel.SetActive(false);
     }
 
+
     public void ClearInventoryIcons()
     {
         for (int i = 0; i < inventoryIcons.Length; ++i)

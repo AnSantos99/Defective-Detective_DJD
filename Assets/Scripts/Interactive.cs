@@ -2,7 +2,7 @@
 
 public class Interactive : MonoBehaviour
 {
-    public enum InteractiveType { PICKABLE, INTERACT_ONCE, INTERACT_MULTIPLE, INDIRECT };
+    public enum InteractiveType { PICKABLE, INTERACT_ONCE, INTERACT_MULTIPLE, INDIRECT, WRITE_CODE };
 
     public bool isActive;
     public InteractiveType type;
@@ -13,6 +13,8 @@ public class Interactive : MonoBehaviour
     public Interactive[] inventoryRequirements;
     public Interactive[] activationChain;
     public Interactive[] interactionChain;
+
+    private GameObject view;
 
     private Animator _animator;
 
@@ -41,6 +43,17 @@ public class Interactive : MonoBehaviour
             if (type == InteractiveType.INTERACT_ONCE)
             {
                 GetComponent<Collider>().enabled = false;
+            }
+
+            // check where to change this to so it works
+            if (type == InteractiveType.WRITE_CODE)
+            {
+              
+                view = GameObject.FindGameObjectWithTag("viewManager");
+                ViewController viewScript = view.GetComponent<ViewController>();
+                    
+                    viewScript.ToggleInputPanel(true);
+                //viewScript.ToggleInputPanel(true);
             }
         }
     }
