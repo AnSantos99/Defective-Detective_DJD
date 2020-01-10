@@ -9,15 +9,27 @@ public class ViewController : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject inputMenu;
     public GameObject bookPanel;
+    public GameObject notesPanel;
+
+    public bool InputChecking;
+    public bool passwordCorrect;
 
     void Start()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1;
+        InputChecking = false;
+        passwordCorrect = false;
     }
 
     void Update()
+    {
+        if(!InputChecking)
+            CheckInput();
+    }
+
+    public void CheckInput()
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
@@ -31,29 +43,47 @@ public class ViewController : MonoBehaviour
             ShowMouseCursor();
         }
 
-        if (Input.GetKeyDown(KeyCode.O))
+        if (Input.GetKeyDown(KeyCode.O) && passwordCorrect == false)
         {
+            InputChecking = true;
             ToggleInputPanel(false);
+            ShowMouseCursor();
+        }
+
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            ToggleNotes(false);
             ShowMouseCursor();
         }
     }
 
     public void ToggleInputPanel(bool condition)
     {
+        InputChecking = !inputMenu.activeInHierarchy;
         inputMenu.SetActive(!inputMenu.activeInHierarchy);
         StopPlayerMotion(!inputMenu.activeInHierarchy);
     }
 
     public void ToggleBookPanel(bool condition)
     {
+        InputChecking = !bookPanel.activeInHierarchy;
         bookPanel.SetActive(!bookPanel.activeInHierarchy);
         StopPlayerMotion(!bookPanel.activeInHierarchy);
     }
 
+
     public void TogglePauseMenu(bool condition)
     {
+        InputChecking = !pauseMenu.activeInHierarchy;
         pauseMenu.SetActive(!pauseMenu.activeInHierarchy);
         StopPlayerMotion(!pauseMenu.activeInHierarchy);
+    }
+
+    public void ToggleNotes(bool condition)
+    {
+        InputChecking = !notesPanel.activeInHierarchy;
+        notesPanel.SetActive(!notesPanel.activeInHierarchy);
+        StopPlayerMotion(!notesPanel.activeInHierarchy);
     }
 
     public void ToggleInventory(bool condition)

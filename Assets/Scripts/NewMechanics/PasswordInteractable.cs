@@ -22,4 +22,5 @@ public class PasswordInteractable : MonoBehaviour
     {
         viewScript.ToggleInputPanel(true);
     }
+    
 }

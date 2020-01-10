@@ -33,7 +33,7 @@ public class InteractableObjects : MonoBehaviour
             }
             else
             {
-                Interactable.SendMessage("UnTouch");
+                //Interactable.SendMessage("UnTouch");
                 Interactable = null;
             }
         }

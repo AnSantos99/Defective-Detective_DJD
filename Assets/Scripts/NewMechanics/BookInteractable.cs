@@ -11,6 +11,12 @@ public class BookInteractable : MonoBehaviour
 
     public GameObject[] pages;
 
+    public GameObject Notes;
+
+    private string[] notesToAdd;
+
+    private NotesAdd NotesScript;
+
     void Start()
     {
         view = GameObject.FindGameObjectWithTag("viewManager");
@@ -19,7 +25,6 @@ public class BookInteractable : MonoBehaviour
             page.SetActive(false);
         pages[0].SetActive(true);
     }
-
 
     public void ForwardPage(int page)
     {
@@ -31,30 +36,39 @@ public class BookInteractable : MonoBehaviour
     {
         pages[page].SetActive(true);
         pages[page + 1].SetActive(false);
+
+        notesToAdd = new string[]
+        {
+            "zen is bastard",
+            "is zen the killer?"
+        };
+
+
+            
+        NotesScript = Notes.GetComponent<NotesAdd>();
+
+        foreach (string note in notesToAdd)
+            NotesScript.PageList.Add(note);
     }
 
     public void OnTouch()
     {
         viewScript.ToggleBookPanel(false);
+        //Notes.AddToNotes("note");
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.M))
+        if (Input.GetKeyDown(KeyCode.M) && currentPage < pages.Length)
         {
             currentPage += 1;
             ForwardPage(currentPage);
         }
 
-        if (Input.GetKeyDown(KeyCode.N))
+        if (Input.GetKeyDown(KeyCode.N) && currentPage >= 0)
         {
             currentPage -= 1;
             BackwardsPage(currentPage);
         }
-    }
-
-    public void UnTouch()
-    {
-        viewScript.ToggleBookPanel(true);
-    }
+    } 
 }
