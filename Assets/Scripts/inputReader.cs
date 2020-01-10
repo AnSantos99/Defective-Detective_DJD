@@ -6,9 +6,6 @@ using TMPro;
 
 public class inputReader : MonoBehaviour
 {
-
-    //public ViewController view;
-
     public TMP_InputField input;
 
     public void GetInput()

@@ -19,8 +19,6 @@ public class ViewController : MonoBehaviour
 
     void Update()
     {
-        
-
         if (Input.GetKeyDown(KeyCode.I))
         {
             ToggleInventory(false);
@@ -33,9 +31,12 @@ public class ViewController : MonoBehaviour
             ShowMouseCursor();
         }
 
-        
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            ToggleInputPanel(false);
+            ShowMouseCursor();
+        }
     }
-
 
     public void ToggleInputPanel(bool condition)
     {
@@ -57,7 +58,6 @@ public class ViewController : MonoBehaviour
 
     public void ToggleInventory(bool condition)
     {
-
         if (condition)
         {
             Time.timeScale = 0;
@@ -69,14 +69,11 @@ public class ViewController : MonoBehaviour
         {
             Time.timeScale = 1.0f;
             HideMouseCursor();
-        }
-
-        
+        }       
     }
 
     void StopPlayerMotion(bool condition)
     {
-
         if (!condition)
         {
             Time.timeScale = 0;
@@ -104,5 +101,4 @@ public class ViewController : MonoBehaviour
         Cursor.visible = false;
         Screen.lockCursor = true;
     }
-
 }
