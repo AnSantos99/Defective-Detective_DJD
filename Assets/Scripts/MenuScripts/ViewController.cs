@@ -12,40 +12,46 @@ public class ViewController : MonoBehaviour
 
     void Start()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1;
     }
 
     void Update()
     {
+        
+
         if (Input.GetKeyDown(KeyCode.I))
         {
             ToggleInventory(false);
+            ShowMouseCursor();
         }
 
         if (Input.GetKeyDown(KeyCode.P))
         {
             TogglePauseMenu(false);
+            ShowMouseCursor();
         }
+
+        
     }
+
 
     public void ToggleInputPanel(bool condition)
     {
         inputMenu.SetActive(!inputMenu.activeInHierarchy);
-        Cursor.visible = inputMenu.activeInHierarchy;
         StopPlayerMotion(!inputMenu.activeInHierarchy);
     }
 
     public void ToggleBookPanel(bool condition)
     {
         bookPanel.SetActive(!bookPanel.activeInHierarchy);
-        Cursor.visible = bookPanel.activeInHierarchy;
         StopPlayerMotion(!bookPanel.activeInHierarchy);
     }
 
     public void TogglePauseMenu(bool condition)
     {
         pauseMenu.SetActive(!pauseMenu.activeInHierarchy);
-        Cursor.visible = pauseMenu.activeInHierarchy;
         StopPlayerMotion(!pauseMenu.activeInHierarchy);
     }
 
@@ -56,18 +62,16 @@ public class ViewController : MonoBehaviour
         {
             Time.timeScale = 0;
             ShowMouseCursor();
+            inventory.SetActive(!inventory.activeInHierarchy);
         }
 
         else
         {
             Time.timeScale = 1.0f;
             HideMouseCursor();
-
         }
 
-        inventory.SetActive(!inventory.activeInHierarchy);
-        Cursor.visible = inventory.activeInHierarchy;
-        StopPlayerMotion(!inventory.activeInHierarchy);
+        
     }
 
     void StopPlayerMotion(bool condition)
@@ -82,7 +86,7 @@ public class ViewController : MonoBehaviour
         else
         {
             Time.timeScale = 1.0f;
-            ShowMouseCursor();
+            HideMouseCursor();
         }
     }
 
@@ -90,12 +94,15 @@ public class ViewController : MonoBehaviour
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        Screen.lockCursor = false;
     }
 
     public void HideMouseCursor()
     {
-        Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = false;
+        Screen.lockCursor = true;
     }
 
 }
