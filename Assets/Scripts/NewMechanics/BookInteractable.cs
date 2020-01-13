@@ -42,8 +42,6 @@ public class BookInteractable : MonoBehaviour
             "zen is bastard",
             "is zen the killer?"
         };
-
-
             
         NotesScript = Notes.GetComponent<NotesAdd>();
 
