@@ -105,6 +105,13 @@ public class ViewController : MonoBehaviour
 
     public void ToggleInventory(bool condition)
     {
+        InputChecking = !inventory.activeInHierarchy;
+        inventory.SetActive(!inventory.activeInHierarchy);
+        StopPlayerMotion(!inventory.activeInHierarchy);
+    }
+    /*
+    public void ToggleInventory(bool condition)
+    {
         if (condition)
         {
             Time.timeScale = 0;
@@ -118,7 +125,7 @@ public class ViewController : MonoBehaviour
             HideMouseCursor();
         }       
     }
-
+    */
     void StopPlayerMotion(bool condition)
     {
         if (!condition)
