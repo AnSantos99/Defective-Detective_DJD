@@ -10,6 +10,7 @@ public class ViewController : MonoBehaviour
     public GameObject inputMenu;
     public GameObject bookPanel;
     public GameObject notesPanel;
+    public GameObject zamazonKitPanel;
 
     public bool InputChecking;
     public bool passwordCorrect;
@@ -43,18 +44,34 @@ public class ViewController : MonoBehaviour
             ShowMouseCursor();
         }
 
-        if (Input.GetKeyDown(KeyCode.O) && passwordCorrect == false)
-        {
-            InputChecking = true;
-            ToggleInputPanel(false);
-            ShowMouseCursor();
-        }
-
         if (Input.GetKeyDown(KeyCode.N))
         {
             ToggleNotes(false);
             ShowMouseCursor();
         }
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            ToggleKit(false);
+            ShowMouseCursor();
+        }
+    }
+
+    // change to this later 
+    /*
+    public void ToggleComponent(bool condition, GameObject component)
+    {
+        InputChecking = !component.activeInHierarchy;
+        inputMenu.SetActive(!component.activeInHierarchy);
+        StopPlayerMotion(!component.activeInHierarchy);
+    }
+    */
+
+    public void ToggleKit(bool condition)
+    {
+        InputChecking = !zamazonKitPanel.activeInHierarchy;
+        zamazonKitPanel.SetActive(!zamazonKitPanel.activeInHierarchy);
+        StopPlayerMotion(!zamazonKitPanel.activeInHierarchy);
     }
 
     public void ToggleInputPanel(bool condition)
@@ -71,7 +88,7 @@ public class ViewController : MonoBehaviour
         StopPlayerMotion(!bookPanel.activeInHierarchy);
     }
 
-
+    
     public void TogglePauseMenu(bool condition)
     {
         InputChecking = !pauseMenu.activeInHierarchy;

@@ -11,8 +11,6 @@ public class NotesAdd : MonoBehaviour
 
     private TMP_Text getText;
 
-
-
    // public GameObject BookPanel;
 
     //private GameObject BookScript;
@@ -51,11 +49,11 @@ public class NotesAdd : MonoBehaviour
     // Update is called once per frame
     void Update()
     {    
-        getText = pages[0].GetComponent<TMP_Text>();
+        getText = pages[0]?.GetComponent<TMP_Text>();
 
         // Change the text on the text component.
 
-        string addText = getText.text;
+        string addText = getText?.text;
 
         getText.text += "Some new line of text.";
 
