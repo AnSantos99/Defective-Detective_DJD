@@ -6,14 +6,31 @@ public class PlayerInventory : MonoBehaviour
 {
     public Inventory inventory;
 
+    public GameObject Hand;
+
     //private IInventoryItem item;
 
     private IInventoryItem mCurrentItem = null;
 
     private void Start()
     {
-        //item = null;
+        inventory.ItemUsed += Inventory_ItemUsed;
 
+    }
+
+    private void Inventory_ItemUsed(object sender, InventoryEventArgs e)
+    {
+        IInventoryItem item = e.Item;
+
+        GameObject goItem = (item as MonoBehaviour).gameObject;       
+
+        goItem.SetActive(true);
+
+        goItem.GetComponent<RotateObject>().enabled = true;
+
+        goItem.transform.parent = Hand.transform;
+        goItem.transform.localPosition = (item as InventoryItemBase).PickPosition;
+        goItem.transform.localEulerAngles = (item as InventoryItemBase).PickRotation;
     }
 
     // Start is called before the first frame update
