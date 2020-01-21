@@ -33,6 +33,7 @@ public class Pickables : MonoBehaviour, IInventoryItem
         RaycastHit hit = new RaycastHit();
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        
         if(Physics.Raycast(ray, out hit, 1000))
         {
             gameObject.SetActive(true);

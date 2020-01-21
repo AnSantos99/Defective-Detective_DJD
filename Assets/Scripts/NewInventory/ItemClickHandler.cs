@@ -15,6 +15,9 @@ public class ItemClickHandler : MonoBehaviour
         Debug.Log("click");
         Debug.Log(item.Name);
 
+        // activate rotation script on object until keypress
+        //activate when object is clicked on inventory
+
         //item.OnUse();
     }
 }

@@ -22,8 +22,12 @@ public class HUB : MonoBehaviour
 
         foreach (Transform slot in inventoryPanel)
         {
-            Image image = slot.GetChild(0).GetChild(0).GetComponent<Image>();
-            ItemDragHandler itemDragHandler = image.GetComponent<ItemDragHandler>();
+            Transform imageTransform = slot.GetChild(0).GetChild(0);
+
+            Image image = imageTransform.GetComponent<Image>();
+
+            //Image image = slot.GetChild(0).GetChild(0).GetComponent<Image>();
+            ItemDragHandler itemDragHandler = imageTransform.GetComponent<ItemDragHandler>();
             Debug.Log(image.tag);
             
             if(!image.enabled)
@@ -45,7 +49,7 @@ public class HUB : MonoBehaviour
 
         foreach(Transform slot in inventoryPanel)
         {
-            Transform imageTransform = slot.GetChild(0);
+            Transform imageTransform = slot.GetChild(0).GetChild(0);
 
             Image image = imageTransform.GetComponent<Image>();
 
