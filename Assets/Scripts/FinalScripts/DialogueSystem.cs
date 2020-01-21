@@ -43,6 +43,7 @@ public class DialogueSystem : MonoBehaviour
         if (dialogueActive == true)
         {
             dialogueGUI.SetActive(false);
+            
         }
     }
 
