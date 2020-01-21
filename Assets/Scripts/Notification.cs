@@ -24,7 +24,7 @@ public class Notification : MonoBehaviour
         
     } 
 
-    public void GetObjectForNotifications() 
+    public void ActionNotifications() 
     {
 
     }
