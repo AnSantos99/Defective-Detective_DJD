@@ -4,10 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - NPC
-  - viewManager
-  - Touchable
   - Pickable
+  - viewManager
+  - NPC
+  - Touchable
+  - Slot
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - UI
   - 
   - 
-  - ItemRotation
+  - 
   - 
   - 
   - 

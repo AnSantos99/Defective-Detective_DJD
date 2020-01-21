@@ -6,11 +6,13 @@ public class PlayerInventory : MonoBehaviour
 {
     public Inventory inventory;
 
-    private IInventoryItem item;
+    //private IInventoryItem item;
+
+    private IInventoryItem mCurrentItem = null;
 
     private void Start()
     {
-        item = null;
+        //item = null;
 
     }
 
@@ -21,8 +23,8 @@ public class PlayerInventory : MonoBehaviour
 
         //GameObject Collide = other.GetComponent.FindWithTag("Pickable");
 
-        
-        item = other.GetComponent<IInventoryItem>();
+
+        IInventoryItem item = other.GetComponent<IInventoryItem>();
 
         IInventoryItem currentItem = null;
 

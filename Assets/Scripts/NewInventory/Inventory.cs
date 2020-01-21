@@ -32,10 +32,8 @@ public class Inventory : MonoBehaviour
                     ItemAdded(this, new InventoryEventArgs(item));
                 }
             }
-
         }
     }
-
 
     public void RemoveItem(IInventoryItem item)
     {

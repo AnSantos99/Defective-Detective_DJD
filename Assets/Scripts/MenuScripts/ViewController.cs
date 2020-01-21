@@ -17,8 +17,8 @@ public class ViewController : MonoBehaviour
 
     void Start()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1;
         InputChecking = false;
         passwordCorrect = false;

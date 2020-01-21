@@ -2,9 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-
-    public interface IInventoryItem
+public interface IInventoryItem
     {
         string Name { get; }
 
@@ -14,7 +14,8 @@ using UnityEngine;
 
         void OnDrop();
 
-}
+        // void OnUse();
+    }
 
     public class InventoryEventArgs : EventArgs
     {
@@ -22,9 +23,7 @@ using UnityEngine;
         {
             Item = item;
         }
-
-    
-        public IInventoryItem Item;
-    
+   
+        public IInventoryItem Item;    
 }
 

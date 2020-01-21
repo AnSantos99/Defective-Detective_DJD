@@ -5,10 +5,9 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class HUB : MonoBehaviour
-{
+{ 
     public Inventory Inventory;
 
-    public GameObject InventoryPanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,27 +16,26 @@ public class HUB : MonoBehaviour
     }
 
     private void InventoryScript_ItemAdded(object sender, InventoryEventArgs e)
-    {
-        Transform inventoryPanel = transform.Find("InventoryPanel");
+    { 
 
-       //  inventoryPanel = transform.Find("InventoryPanel");
+        Transform inventoryPanel = transform.Find("InventoryPanel");
 
         foreach (Transform slot in inventoryPanel)
         {
-            Transform imageTransform = slot.GetChild(0);
-            Image img = imageTransform.GetComponent<Image>();
-            ItemDragHandler itemDragHandler = imageTransform.GetComponent<ItemDragHandler>();
-
-            if(!img.enabled)
+            Image image = slot.GetChild(0).GetChild(0).GetComponent<Image>();
+            ItemDragHandler itemDragHandler = image.GetComponent<ItemDragHandler>();
+            Debug.Log(image.tag);
+            
+            if(!image.enabled)
             {
-                
-                img.enabled = true;
-                img.sprite = e.Item.Image;
+                image.enabled = true;
+                image.sprite = e.Item.Image;
 
                 itemDragHandler.Item = e.Item;
 
                 break;
             }
+            
         }
     }
 
