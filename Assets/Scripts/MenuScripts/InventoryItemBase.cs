@@ -8,7 +8,7 @@ public class InventoryItemBase : MonoBehaviour, IInventoryItem
     {
         get
         {
-            return "none";
+            return "base_item";
         }
     }
 
@@ -17,6 +17,11 @@ public class InventoryItemBase : MonoBehaviour, IInventoryItem
     public Sprite Image
     {
         get { return _Image; }
+    }
+
+    public virtual void OnUse()
+    {
+
     }
 
     public virtual void OnPickup()
@@ -37,4 +42,7 @@ public class InventoryItemBase : MonoBehaviour, IInventoryItem
             gameObject.transform.position = hit.point;
         }
     }
+
+    public Vector3 PickPosition;
+    public Vector3 PickRotation;
 }

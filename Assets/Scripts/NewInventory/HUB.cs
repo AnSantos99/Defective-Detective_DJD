@@ -26,9 +26,8 @@ public class HUB : MonoBehaviour
 
             Image image = imageTransform.GetComponent<Image>();
 
-            //Image image = slot.GetChild(0).GetChild(0).GetComponent<Image>();
             ItemDragHandler itemDragHandler = imageTransform.GetComponent<ItemDragHandler>();
-            Debug.Log(image.tag);
+           
             
             if(!image.enabled)
             {
