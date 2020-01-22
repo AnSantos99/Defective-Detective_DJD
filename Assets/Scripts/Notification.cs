@@ -23,10 +23,14 @@ public class Notification : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    
+    public void OnInventoryEnter()
+    {
+
+
+    }
 
     /// <summary>
     /// Display Notifications and its message and makes the panel

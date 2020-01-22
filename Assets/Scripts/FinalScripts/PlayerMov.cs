@@ -19,6 +19,10 @@ public class PlayerMov : MonoBehaviour
     [SerializeField]private float jumpMultiplier;
     [SerializeField]private KeyCode jumpKey;
 
+    public AudioSource audioSource;
+
+    private bool walking = false;
+
     private bool isJumping;
 
     private void Awake()
@@ -29,6 +33,7 @@ public class PlayerMov : MonoBehaviour
     private void Update()
     {
         PlayerMovement();
+        FootStepSounds();
     }
 
     private void PlayerMovement()
@@ -38,6 +43,8 @@ public class PlayerMov : MonoBehaviour
 
         Vector3 forwardMovement = transform.forward * vertInput;
         Vector3 rightMovement = transform.right * horizInput;
+
+        walking = true;
 
         charController.SimpleMove(Vector3.ClampMagnitude(forwardMovement + rightMovement, 1.0f) * movementSpeed);
 
@@ -77,5 +84,29 @@ public class PlayerMov : MonoBehaviour
 
         charController.slopeLimit = 45.0f;
         isJumping = false;
+    }
+
+
+    private void FootStepSounds() 
+    {
+        //while (walking == true)
+        //{
+        //    if (Input.GetKeyDown("Horizontal") && Input.GetKeyDown("Vertical"))
+        //        {
+        //            audioSource.enabled = true;
+        //        }
+        //}
+
+        if (walking == true) 
+        {
+            audioSource.enabled = true;
+            Debug.Log("Is playing");
+        }
+        
+        
+        else
+            audioSource.enabled = false;
+
+        
     }
 }

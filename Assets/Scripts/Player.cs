@@ -29,6 +29,8 @@ public class Player : MonoBehaviour
     private float   _velocityFactor;
     private bool    _jump;
 
+
+
     public void Start()
     {
         _controller         = GetComponent<CharacterController>();

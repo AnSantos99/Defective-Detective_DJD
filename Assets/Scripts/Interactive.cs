@@ -14,13 +14,22 @@ public class Interactive : MonoBehaviour
     public Interactive[] activationChain;
     public Interactive[] interactionChain;
 
+    public AudioSource audioSource;
+
     private GameObject view;
 
     private Animator _animator;
 
     public void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         _animator = GetComponent<Animator>();
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+            audioSource.Play();
     }
 
     public void Activate()
@@ -75,4 +84,6 @@ public class Interactive : MonoBehaviour
                 interactionChain[i].Interact();
         }
     }
+
+
 }
