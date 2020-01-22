@@ -58,7 +58,7 @@ public class PlayerInventory : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
 
         IInventoryItem item = other.GetComponent<IInventoryItem>();
@@ -67,10 +67,10 @@ public class PlayerInventory : MonoBehaviour
 
         if (item != null && other.tag == "Pickable")
         {
-            inventory.AddItem(item);
-            Debug.Log("ouch");
-        }
-
-        
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                inventory.AddItem(item);
+            }
+        }    
     }
 }
