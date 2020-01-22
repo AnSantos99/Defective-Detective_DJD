@@ -8,6 +8,10 @@ public class PlayerInventory : MonoBehaviour
 
     public GameObject Hand;
 
+    public GameObject GoItem;
+
+    private bool RotActive;
+
     //private IInventoryItem item;
 
     private IInventoryItem mCurrentItem = null;
@@ -15,7 +19,25 @@ public class PlayerInventory : MonoBehaviour
     private void Start()
     {
         inventory.ItemUsed += Inventory_ItemUsed;
+        RotActive = true;
 
+    }
+
+    public void Activate(bool rotActive)
+    {
+        RotActive= rotActive;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R) || !RotActive)
+        {
+            GoItem.SetActive(false);
+
+            GoItem.GetComponent<RotateObject>().enabled = true;
+
+            RotActive = true;
+        }
     }
 
     private void Inventory_ItemUsed(object sender, InventoryEventArgs e)
@@ -31,15 +53,13 @@ public class PlayerInventory : MonoBehaviour
         goItem.transform.parent = Hand.transform;
         goItem.transform.localPosition = (item as InventoryItemBase).PickPosition;
         goItem.transform.localEulerAngles = (item as InventoryItemBase).PickRotation;
+
+        GoItem = goItem;
     }
 
     // Start is called before the first frame update
     void OnTriggerEnter(Collider other)
     {
-        //IInventoryItem item = other.GameObject.FindGameObjectWithTag("Pickable");
-
-        //GameObject Collide = other.GetComponent.FindWithTag("Pickable");
-
 
         IInventoryItem item = other.GetComponent<IInventoryItem>();
 
