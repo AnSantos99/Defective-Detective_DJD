@@ -12,28 +12,27 @@ public class Notification : MonoBehaviour
     // To get acess the gameobject of notification box
     public GameObject notificationBox;
 
+    GameObject objs;
+
     // Start is called before the first frame update
     void Start()
     {
-        HideNotification();
+        //HideNotification();
     }
 
     // Update is called once per frame
     void Update()
     {
         
-    } 
-
-    public void ActionNotifications() 
-    {
-
     }
+
+    
 
     /// <summary>
     /// Display Notifications and its message and makes the panel
     /// visible
     /// </summary>
-    /// <param name="message"> Gets a message</param>
+    /// <param name="message"> Gets a message </param>
     public void DisplayNotification(string message) 
     {
         notificationText.text = message;
@@ -41,10 +40,16 @@ public class Notification : MonoBehaviour
     }
 
     /// <summary>
-    /// Hide the notification panel in the begining
+    /// Hide the notification panel
     /// </summary>
     public void HideNotification() 
     {
         notificationBox.SetActive(false);
+    }
+
+    IEnumerator DisapearCountDown() 
+    {
+        yield return new WaitForSeconds(5);
+        HideNotification();
     }
 }
