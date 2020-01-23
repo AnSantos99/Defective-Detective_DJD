@@ -29,12 +29,10 @@ public class inputReader : MonoBehaviour
     {
         if (input.text == "yes")
         {
-            Debug.Log("Correct!");
             input.text = "";
             doorAnim.SetBool("DoorOpen", true);
             viewScript.passwordCorrect = true;
-            viewScript.ToggleInputPanel(false);
-            
+            viewScript.ToggleInputPanel(false);    
         }
 
         else

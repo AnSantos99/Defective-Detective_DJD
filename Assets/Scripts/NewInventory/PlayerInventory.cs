@@ -16,7 +16,9 @@ public class PlayerInventory : MonoBehaviour
 
     public HUB hub;
 
-    //private IInventoryItem item;
+    public GameObject Elmo;
+
+    public Transform tPosition, tRotation;
 
     private IInventoryItem mCurrentItem = null;
 
@@ -48,6 +50,7 @@ public class PlayerInventory : MonoBehaviour
         IInventoryItem item = e.Item;
 
         GameObject goItem = (item as MonoBehaviour).gameObject;
+       
 
         if (item.Name == "passwordReader")
         {
@@ -58,12 +61,11 @@ public class PlayerInventory : MonoBehaviour
         if (item.Name == "book")
         {
             vc.ToggleInventory(true);
-            item.OnUse();
             GoItem = goItem;
         }
 
         else
-        { 
+        {
 
             goItem.SetActive(true);
             goItem.GetComponent<RotateObject>().enabled = true;
@@ -71,11 +73,10 @@ public class PlayerInventory : MonoBehaviour
             goItem.transform.localPosition = (item as InventoryItemBase).PickPosition;
             goItem.transform.localEulerAngles = (item as InventoryItemBase).PickRotation;
 
-
             GoItem = goItem;
         }
-    
 
+        
        
     }
 
@@ -98,24 +99,41 @@ public class PlayerInventory : MonoBehaviour
 
         IInventoryItem currentItem = null;
 
-        if (item != null && other.tag == "Pickable")
+
+        if (item != null && other.tag == "ZamazonKit")
         {
-            hub.OpenMessagePanel("");
-            
             if (Input.GetKeyDown(KeyCode.F))
             {
-                inventory.AddItem(item);
-                item.OnPickup();
+                vc.ToggleKit(false);
+                vc.InventoryIsActive = true;
+                //FindObjectWithTag("Elmo").SetActive(true);
+                Instantiate(Elmo, tPosition, tRotation);
             }
+            
         }
 
-        if (item != null && other.tag == "Touchable")
-        {
-            if (Input.GetKeyDown(KeyCode.F))
+        if(vc.InventoryIsActive == true) 
+        { 
+            if (item != null && other.tag == "Pickable")
             {
                 hub.OpenMessagePanel("");
-                item.OnUse();
+            
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    inventory.AddItem(item);
+                    item.OnPickup();
+                }
             }
+
+            if (item != null && other.tag == "Touchable")
+            {
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    hub.OpenMessagePanel("");
+                    item.OnUse();
+                }
+            }
+
         }
 
     }

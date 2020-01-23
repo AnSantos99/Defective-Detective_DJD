@@ -11,6 +11,8 @@ TagManager:
   - Slot
   - Monologue_PlayerRoom
   - WrongInput
+  - ZamazonKit
+  - Elmo
   layers:
   - Default
   - TransparentFX

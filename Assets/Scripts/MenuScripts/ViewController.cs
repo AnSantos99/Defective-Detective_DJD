@@ -15,8 +15,11 @@ public class ViewController : MonoBehaviour
     public bool InputChecking;
     public bool passwordCorrect;
 
+    public bool InventoryIsActive = false;
+
     void Start()
     {
+        
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1;
@@ -32,10 +35,11 @@ public class ViewController : MonoBehaviour
 
     public void CheckInput()
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.I) && InventoryIsActive == true)
         {
+            
             ToggleInventory(false);
-            ShowMouseCursor();
+            ShowMouseCursor();     
         }
 
         if (Input.GetKeyDown(KeyCode.P))
