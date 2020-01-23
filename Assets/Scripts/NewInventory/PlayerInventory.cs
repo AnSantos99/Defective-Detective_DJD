@@ -48,6 +48,7 @@ public class PlayerInventory : MonoBehaviour
         IInventoryItem item = e.Item;
 
         GameObject goItem = (item as MonoBehaviour).gameObject;
+       
 
         if (item.Name == "passwordReader")
         {
@@ -58,12 +59,12 @@ public class PlayerInventory : MonoBehaviour
         if (item.Name == "book")
         {
             vc.ToggleInventory(true);
-            item.OnUse();
+            //item.OnUse();
             GoItem = goItem;
         }
 
         else
-        { 
+        {
 
             goItem.SetActive(true);
             goItem.GetComponent<RotateObject>().enabled = true;
@@ -71,11 +72,10 @@ public class PlayerInventory : MonoBehaviour
             goItem.transform.localPosition = (item as InventoryItemBase).PickPosition;
             goItem.transform.localEulerAngles = (item as InventoryItemBase).PickRotation;
 
-
             GoItem = goItem;
         }
-    
 
+        
        
     }
 
@@ -97,6 +97,18 @@ public class PlayerInventory : MonoBehaviour
         IInventoryItem item = other.GetComponent<IInventoryItem>();
 
         IInventoryItem currentItem = null;
+
+
+        if (item != null && other.tag == "ZamazonKit")
+        {
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                vc.ToggleKit(false);
+                Debug.Log("kit");
+            }
+            
+        }
+
 
         if (item != null && other.tag == "Pickable")
         {
