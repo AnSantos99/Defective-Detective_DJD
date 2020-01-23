@@ -1814,10 +1814,10 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 155892933}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.22}
+  m_LocalPosition: {x: 0, y: 0, z: -0.032}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1002888116}
+  - {fileID: 4303843930796494}
   - {fileID: 17127763}
   - {fileID: 266713427}
   - {fileID: 27419533}
@@ -1826,7 +1826,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -333.717, y: -316.478}
+  m_AnchoredPosition: {x: -959.6417, y: -520.0181}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &165978150
@@ -1966,6 +1966,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   input: {fileID: 1538105775}
   Door: {fileID: 2047431980}
+  WrongPanel: {fileID: 0}
 --- !u!1 &183189122
 GameObject:
   m_ObjectHideFlags: 0
@@ -4441,7 +4442,7 @@ GameObject:
   - component: {fileID: 554654672}
   - component: {fileID: 554654671}
   m_Layer: 0
-  m_Name: Dialog_Panel
+  m_Name: DialogueDefault
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9137,32 +9138,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f600b2c6db6c25340aa732b79c18d826, type: 3}
---- !u!1 &1002888115 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1311290861401530, guid: 312b31977ed9b2d48a14849ebb8c7fb3,
-    type: 3}
-  m_PrefabInstance: {fileID: 896008570}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1002888116 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4303844821561524, guid: 312b31977ed9b2d48a14849ebb8c7fb3,
-    type: 3}
-  m_PrefabInstance: {fileID: 896008570}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1002888117
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1002888115}
+  m_GameObject: {fileID: 1311290099610816}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b09cdbb2227359745924f42d8e46bb60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CharBG: {fileID: 1993915292}
-  NPCChar: {fileID: 1002888116}
+  NPCChar: {fileID: 4303843930796494}
   Name: Nugget
   sentences:
   - "pablo: \n it wasn't me!! i swear!"
@@ -9176,7 +9165,7 @@ BoxCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1002888115}
+  m_GameObject: {fileID: 1311290099610816}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
@@ -10534,6 +10523,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0619d29348aeea84e9126544def08caf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Image: {fileID: 0}
+  PickPosition: {x: 0, y: 0, z: 0}
+  PickRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &1148389334
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10766,10 +10758,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Monologue:
+  - {fileID: 1664071018}
   - {fileID: 1244747623}
   - {fileID: 986895729}
   - {fileID: 892570505}
-  - {fileID: 1664071018}
   current: {fileID: 554654669}
 --- !u!136 &1176397192
 CapsuleCollider:
@@ -10915,8 +10907,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: -0.0041648895
-      value: 1.0047038
+      time: 0.05859451
+      value: 0.6926539
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -16203,6 +16195,7 @@ MonoBehaviour:
   attemptedCode: 
   toOpen: {fileID: 356027429}
   caseInside: {fileID: 933647851}
+  WrongPanel: {fileID: 0}
 --- !u!65 &1804966014
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17231,6 +17224,7 @@ MonoBehaviour:
   attemptedCode: 
   toOpen: {fileID: 1755111980}
   caseInside: {fileID: 1380250452}
+  WrongPanel: {fileID: 0}
 --- !u!65 &1896137337
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17914,6 +17908,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5abf4bee27cdb704787eb6f46d54ff97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Image: {fileID: 0}
+  PickPosition: {x: 0, y: 0, z: 0}
+  PickRotation: {x: 0, y: 0, z: 0}
   pages:
   - {fileID: 949477707}
   - {fileID: 1596421410}
@@ -19181,6 +19178,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1311290099610816 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1311290861401530, guid: 312b31977ed9b2d48a14849ebb8c7fb3,
+    type: 3}
+  m_PrefabInstance: {fileID: 896008570}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4303843930796494 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4303844821561524, guid: 312b31977ed9b2d48a14849ebb8c7fb3,
+    type: 3}
+  m_PrefabInstance: {fileID: 896008570}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &833691613444641113
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -16,7 +16,7 @@ public class InnerMonologue : MonoBehaviour
 
     private void Update()
     {
-        InputManage();
+        DialogueInputManage();
     }
 
     void OnTriggerEnter(Collider other)
@@ -53,7 +53,7 @@ public class InnerMonologue : MonoBehaviour
         }
     }
 
-    public void InputManage()
+    public void DialogueInputManage()
     {
         /*if(bool == true)                                  //This is example
         {
