@@ -15,9 +15,10 @@ public interface IInventoryItem
         void OnDrop();
 
         void OnUse();
+
     }
 
-    public class InventoryEventArgs : EventArgs
+public class InventoryEventArgs : EventArgs
     {
         public InventoryEventArgs(IInventoryItem item)
         {

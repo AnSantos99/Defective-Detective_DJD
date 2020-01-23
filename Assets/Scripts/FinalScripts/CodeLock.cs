@@ -16,6 +16,8 @@ public class CodeLock : MonoBehaviour
 
     private Animator _animator;
 
+    public GameObject WrongPanel;
+
     private void Start()
     {
         _animator = GetComponentInParent<Animator>();
@@ -31,8 +33,18 @@ public class CodeLock : MonoBehaviour
         }
         else
         {
-            Debug.Log("WrongCode");
+            StartCoroutine(ShowWrongInputMessage());
+           
         }
+    }
+
+    IEnumerator ShowWrongInputMessage()
+    {
+        WrongPanel.SetActive(true);
+
+        yield return new WaitForSeconds(1);
+
+        WrongPanel.SetActive(false); ;
     }
 
     IEnumerator Open()  //'animation' of open & close

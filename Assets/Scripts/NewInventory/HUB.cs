@@ -8,6 +8,8 @@ public class HUB : MonoBehaviour
 { 
     public Inventory Inventory;
 
+    public GameObject MessagePanel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,19 +18,17 @@ public class HUB : MonoBehaviour
     }
 
     private void InventoryScript_ItemAdded(object sender, InventoryEventArgs e)
-    { 
-
+    {
         Transform inventoryPanel = transform.Find("InventoryPanel");
 
         foreach (Transform slot in inventoryPanel)
         {
             Transform imageTransform = slot.GetChild(0).GetChild(0);
-
-            Image image = imageTransform.GetComponent<Image>();
-
-            ItemDragHandler itemDragHandler = imageTransform.GetComponent<ItemDragHandler>();
            
-            
+            Image image = imageTransform.GetComponent<Image>();
+           
+            ItemDragHandler itemDragHandler = imageTransform.GetComponent<ItemDragHandler>();
+
             if(!image.enabled)
             {
                 image.enabled = true;
@@ -38,8 +38,11 @@ public class HUB : MonoBehaviour
 
                 break;
             }
-            
-        }
+                  
+
+       
+            }         
+        
     }
 
     public void Inventory_ItemRemoved(object sender, InventoryEventArgs e)
@@ -48,9 +51,12 @@ public class HUB : MonoBehaviour
 
         foreach(Transform slot in inventoryPanel)
         {
+  
             Transform imageTransform = slot.GetChild(0).GetChild(0);
+           
 
             Image image = imageTransform.GetComponent<Image>();
+         
 
             ItemDragHandler itemDragHandler = imageTransform.GetComponent<ItemDragHandler>();
 
@@ -60,7 +66,17 @@ public class HUB : MonoBehaviour
                 image.sprite = null;
                 itemDragHandler.Item = null;
                 break;
-            }
+            }          
         }
+    }
+
+    public void OpenMessagePanel(string text)
+    {
+        MessagePanel.SetActive(true); 
+    }
+
+    public void CloseMessagePanel()
+    {
+        MessagePanel.SetActive(false);
     }
 }

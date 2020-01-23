@@ -105,7 +105,7 @@ public class ViewController : MonoBehaviour
 
     public void ToggleInventory(bool condition)
     {
-        InputChecking = !inventory.activeInHierarchy;
+       // InputChecking = !inventory.activeInHierarchy;
         inventory.SetActive(!inventory.activeInHierarchy);
         StopPlayerMotion(!inventory.activeInHierarchy);
     }

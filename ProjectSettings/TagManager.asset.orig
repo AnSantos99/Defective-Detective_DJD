@@ -9,8 +9,11 @@ TagManager:
   - NPC
   - Touchable
   - Slot
+<<<<<<< HEAD
   - Monologue_PlayerRoom
+=======
   - WrongInput
+>>>>>>> 7119fbe49a5c9aca718e3b82688e693ae16255f0
   layers:
   - Default
   - TransparentFX

@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class BookInteractable : MonoBehaviour
+public class BookInteractable : InventoryItemBase
 {
     private GameObject view;
     private ViewController viewScript;
@@ -49,7 +51,16 @@ public class BookInteractable : MonoBehaviour
             NotesScript.PageList.Add(note);
     }
 
-    public void OnTouch()
+    // this is a test of a specific item
+    public override string Name
+    {
+        get
+        {
+            return "book";
+        }
+    }
+
+    public override void OnUse()
     {
         viewScript.ToggleBookPanel(false);
         NotesAdder.SetNotes("note");

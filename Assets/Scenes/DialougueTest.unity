@@ -6446,7 +6446,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 673021592}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8952456d0010bc94e8fd659c5b078f58, type: 3}
   m_Name: 
@@ -10745,6 +10745,7 @@ GameObject:
   - component: {fileID: 1176397197}
   - component: {fileID: 1176397198}
   - component: {fileID: 1176397200}
+  - component: {fileID: 1176397191}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -10752,6 +10753,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1176397191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176397190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efd6fb83405d8c14ca5884236016fed1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Monologue:
+  - {fileID: 1244747623}
+  - {fileID: 986895729}
+  - {fileID: 892570505}
+  - {fileID: 1664071018}
+  current: {fileID: 554654669}
 --- !u!136 &1176397192
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -13010,7 +13029,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1481360810}
-  - component: {fileID: 1481360811}
   m_Layer: 5
   m_Name: InnerMonologues
   m_TagString: Untagged
@@ -13042,24 +13060,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1481360811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1481360809}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efd6fb83405d8c14ca5884236016fed1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Monologue:
-  - {fileID: 1244747623}
-  - {fileID: 986895729}
-  - {fileID: 892570505}
-  - {fileID: 1664071018}
-  current: {fileID: 554654669}
 --- !u!1 &1481421276
 GameObject:
   m_ObjectHideFlags: 0
@@ -14264,7 +14264,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1592987489}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8952456d0010bc94e8fd659c5b078f58, type: 3}
   m_Name: 
