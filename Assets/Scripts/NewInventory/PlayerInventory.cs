@@ -59,7 +59,6 @@ public class PlayerInventory : MonoBehaviour
         if (item.Name == "book")
         {
             vc.ToggleInventory(true);
-            //item.OnUse();
             GoItem = goItem;
         }
 
@@ -104,7 +103,7 @@ public class PlayerInventory : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.F))
             {
                 vc.ToggleKit(false);
-                Debug.Log("kit");
+                vc.InventoryIsActive = true;
             }
             
         }

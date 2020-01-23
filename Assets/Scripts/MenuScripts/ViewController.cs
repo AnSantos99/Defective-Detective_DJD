@@ -15,7 +15,7 @@ public class ViewController : MonoBehaviour
     public bool InputChecking;
     public bool passwordCorrect;
 
-    //public bool InventoryIsActive = false;
+    public bool InventoryIsActive = false;
 
     void Start()
     {
@@ -35,7 +35,7 @@ public class ViewController : MonoBehaviour
 
     public void CheckInput()
     {
-        if (Input.GetKeyDown(KeyCode.I))// && InventoryIsActive == true)
+        if (Input.GetKeyDown(KeyCode.I) && InventoryIsActive == true)
         {
             
             ToggleInventory(false);
