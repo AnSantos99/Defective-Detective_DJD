@@ -18,6 +18,7 @@ public class CanvasManager : MonoBehaviour
         interactionPanel.SetActive(true);
     }
 
+
     public void HideInteractionPanel()
     {
         interactionPanel.SetActive(false);

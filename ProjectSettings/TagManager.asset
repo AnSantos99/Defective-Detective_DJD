@@ -9,6 +9,7 @@ TagManager:
   - NPC
   - Touchable
   - Slot
+  - speachTrigger
   layers:
   - Default
   - TransparentFX

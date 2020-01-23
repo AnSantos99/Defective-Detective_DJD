@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerInteractions : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class PlayerInteractions : MonoBehaviour
         CheckForInteractive();
         CheckForInteraction();
     }
+
+    
 
     private void CheckForInteractive()
     {
@@ -94,6 +97,7 @@ public class PlayerInteractions : MonoBehaviour
     private void Pick()
     {
         AddToInventory(_currentInteractive);
+        
         _currentInteractive.gameObject.SetActive(false);
     }
 
@@ -132,5 +136,4 @@ public class PlayerInteractions : MonoBehaviour
         for (int i = 0; i < _inventory.Count; ++i)
             canvasManager.SetInventoryIcon(i, _inventory[i].inventoryIcon);
     }
-
 }

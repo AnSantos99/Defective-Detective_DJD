@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 
-public class DialogueSystem : MonoBehaviour
+public class PDialogueSystem : MonoBehaviour
 {
     public TMP_Text nameText;
     public TMP_Text dialogueText;
