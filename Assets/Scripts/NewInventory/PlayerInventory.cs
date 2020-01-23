@@ -18,7 +18,7 @@ public class PlayerInventory : MonoBehaviour
 
     public GameObject Elmo;
 
-    public Transform tPosition, tRotation;
+    public GameObject Broom;
 
     private IInventoryItem mCurrentItem = null;
 
@@ -62,6 +62,8 @@ public class PlayerInventory : MonoBehaviour
         {
             vc.ToggleInventory(true);
             GoItem = goItem;
+            Broom.GetComponent<Animator>().SetBool("Fall", true);
+            // he hears broom and we activate sound!!!!
         }
 
         else
@@ -106,8 +108,7 @@ public class PlayerInventory : MonoBehaviour
             {
                 vc.ToggleKit(false);
                 vc.InventoryIsActive = true;
-                //FindObjectWithTag("Elmo").SetActive(true);
-                Instantiate(Elmo, tPosition, tRotation);
+                Instantiate(Elmo);
             }
             
         }
