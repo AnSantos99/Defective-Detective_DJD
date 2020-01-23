@@ -20,6 +20,10 @@ public class PlayerInventory : MonoBehaviour
 
     public GameObject Broom;
 
+    public GameObject DoorStorage;
+
+    public GameObject DoorZen;
+
     private IInventoryItem mCurrentItem = null;
 
     private void Start()
@@ -49,25 +53,30 @@ public class PlayerInventory : MonoBehaviour
     {
         IInventoryItem item = e.Item;
 
-        GameObject goItem = (item as MonoBehaviour).gameObject;
-       
+        GameObject goItem;
 
         if (item.Name == "passwordReader")
         {
+            goItem = (item as MonoBehaviour).gameObject;
+
             item.OnUse();
             goItem = null;
         }
 
         if (item.Name == "book")
         {
+            goItem = (item as MonoBehaviour).gameObject;
+
             vc.ToggleInventory(true);
             GoItem = goItem;
             Broom.GetComponent<Animator>().SetBool("Fall", true);
+            DoorStorage.GetComponent<Animator>().SetBool("DoorOpen", true);
             // he hears broom and we activate sound!!!!
         }
 
         else
         {
+            goItem = (item as MonoBehaviour).gameObject;
 
             goItem.SetActive(true);
             goItem.GetComponent<RotateObject>().enabled = true;
@@ -78,8 +87,8 @@ public class PlayerInventory : MonoBehaviour
             GoItem = goItem;
         }
 
-        
-       
+        GoItem = goItem;
+
     }
 
     // Start is called before the first frame update
@@ -109,8 +118,7 @@ public class PlayerInventory : MonoBehaviour
                 vc.ToggleKit(false);
                 vc.InventoryIsActive = true;
                 Instantiate(Elmo);
-            }
-            
+            }       
         }
 
         if(vc.InventoryIsActive == true) 
