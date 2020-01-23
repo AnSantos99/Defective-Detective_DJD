@@ -22,6 +22,8 @@ public class PlayerInventory : MonoBehaviour
 
     private IInventoryItem mCurrentItem = null;
 
+    RandomDialogues rD;
+
     private void Start()
     {
         inventory.ItemUsed += Inventory_ItemUsed;
@@ -106,10 +108,15 @@ public class PlayerInventory : MonoBehaviour
             {
                 vc.ToggleKit(false);
                 vc.InventoryIsActive = true;
-                //FindObjectWithTag("Elmo").SetActive(true);
                 Instantiate(Elmo, tPosition, tRotation);
+
+                //change of 'scene'
+                if(rD.Scene_1 == true)
+                {
+                    rD.Scene_1 = false;
+                    rD.Scene_2 = true;
+                }
             }
-            
         }
 
         if(vc.InventoryIsActive == true) 
