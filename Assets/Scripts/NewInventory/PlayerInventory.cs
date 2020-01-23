@@ -16,7 +16,9 @@ public class PlayerInventory : MonoBehaviour
 
     public HUB hub;
 
-    //private IInventoryItem item;
+    public GameObject Elmo;
+
+    public Transform tPosition, tRotation;
 
     private IInventoryItem mCurrentItem = null;
 
@@ -104,29 +106,34 @@ public class PlayerInventory : MonoBehaviour
             {
                 vc.ToggleKit(false);
                 vc.InventoryIsActive = true;
+                //FindObjectWithTag("Elmo").SetActive(true);
+                Instantiate(Elmo, tPosition, tRotation);
             }
             
         }
 
-
-        if (item != null && other.tag == "Pickable")
-        {
-            hub.OpenMessagePanel("");
-            
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                inventory.AddItem(item);
-                item.OnPickup();
-            }
-        }
-
-        if (item != null && other.tag == "Touchable")
-        {
-            if (Input.GetKeyDown(KeyCode.F))
+        if(vc.InventoryIsActive == true) 
+        { 
+            if (item != null && other.tag == "Pickable")
             {
                 hub.OpenMessagePanel("");
-                item.OnUse();
+            
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    inventory.AddItem(item);
+                    item.OnPickup();
+                }
             }
+
+            if (item != null && other.tag == "Touchable")
+            {
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    hub.OpenMessagePanel("");
+                    item.OnUse();
+                }
+            }
+
         }
 
     }
