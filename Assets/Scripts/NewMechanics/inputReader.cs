@@ -16,6 +16,8 @@ public class inputReader : MonoBehaviour
     
     private ViewController viewScript;
 
+    public GameObject WrongPanel;
+
     void Start()
     {
         doorAnim = Door.GetComponent<Animator>();
@@ -37,7 +39,17 @@ public class inputReader : MonoBehaviour
 
         else
         {
-            Debug.Log("Incorrect!!");
+            viewScript.ToggleInputPanel(false);
+            StartCoroutine(ShowWrongInputMessage());
         }
+    }
+
+    IEnumerator ShowWrongInputMessage()
+    {
+        WrongPanel.SetActive(true);
+
+        yield return new WaitForSeconds(1);
+
+        WrongPanel.SetActive(false); ;
     }
 }

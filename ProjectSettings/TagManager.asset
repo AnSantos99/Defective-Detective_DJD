@@ -9,6 +9,7 @@ TagManager:
   - NPC
   - Touchable
   - Slot
+  - WrongInput
   layers:
   - Default
   - TransparentFX
