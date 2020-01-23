@@ -126,7 +126,8 @@ public class PlayerInventory : MonoBehaviour
             {
                 vc.ToggleKit(false);
                 vc.InventoryIsActive = true;
-                Instantiate(Elmo);
+<<<<<<< HEAD
+                Instantiate(Elmo, tPosition, tRotation);
 
                 //change of 'scene'
                 if(rD.Scene_1 == true)
@@ -135,6 +136,10 @@ public class PlayerInventory : MonoBehaviour
                     rD.Scene_2 = true;
                 }
             }
+=======
+                Instantiate(Elmo);
+            }       
+>>>>>>> a438f77fee7b9308dacb12662a3f9789a195cb2c
         }
 
         if(vc.InventoryIsActive == true) 

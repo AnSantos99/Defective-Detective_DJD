@@ -13,6 +13,7 @@ TagManager:
   - WrongInput
   - ZamazonKit
   - Elmo
+  - PictureClues
   layers:
   - Default
   - TransparentFX
