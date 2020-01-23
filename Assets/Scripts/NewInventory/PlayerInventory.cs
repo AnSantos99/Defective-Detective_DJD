@@ -12,6 +12,8 @@ public class PlayerInventory : MonoBehaviour
 
     private bool RotActive;
 
+    public ViewController vc;
+
     public HUB hub;
 
     //private IInventoryItem item;
@@ -49,7 +51,11 @@ public class PlayerInventory : MonoBehaviour
 
         goItem.SetActive(true);
 
-        goItem.GetComponent<RotateObject>().enabled = true;
+        if (item.Name != "book")
+            goItem.GetComponent<RotateObject>().enabled = true;
+
+        else
+            vc.ToggleInventory(true);
 
         goItem.transform.parent = Hand.transform;
         goItem.transform.localPosition = (item as InventoryItemBase).PickPosition;
