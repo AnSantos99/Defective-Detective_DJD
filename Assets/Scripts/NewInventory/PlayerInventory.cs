@@ -12,6 +12,8 @@ public class PlayerInventory : MonoBehaviour
 
     private bool RotActive;
 
+    public HUB hub;
+
     //private IInventoryItem item;
 
     private IInventoryItem mCurrentItem = null;
@@ -20,7 +22,6 @@ public class PlayerInventory : MonoBehaviour
     {
         inventory.ItemUsed += Inventory_ItemUsed;
         RotActive = true;
-
     }
 
     public void Activate(bool rotActive)
@@ -29,8 +30,8 @@ public class PlayerInventory : MonoBehaviour
     }
 
     private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R) || !RotActive)
+    {      
+        if (Input.GetKeyDown(KeyCode.R) || !RotActive && GoItem != null)
         {
             GoItem.SetActive(false);
 
@@ -44,7 +45,7 @@ public class PlayerInventory : MonoBehaviour
     {
         IInventoryItem item = e.Item;
 
-        GameObject goItem = (item as MonoBehaviour).gameObject;       
+        GameObject goItem = (item as MonoBehaviour).gameObject;
 
         goItem.SetActive(true);
 
@@ -54,23 +55,38 @@ public class PlayerInventory : MonoBehaviour
         goItem.transform.localPosition = (item as InventoryItemBase).PickPosition;
         goItem.transform.localEulerAngles = (item as InventoryItemBase).PickRotation;
 
+
         GoItem = goItem;
+    }
+
+    // Start is called before the first frame update
+    void OnTriggerEnter(Collider other)
+    {
+        hub.OpenMessagePanel("");
+
+    }
+
+    void OnTriggerExit(Collider other)
+    { 
+        hub.CloseMessagePanel();
     }
 
     // Start is called before the first frame update
     void OnTriggerStay(Collider other)
     {
-
         IInventoryItem item = other.GetComponent<IInventoryItem>();
 
         IInventoryItem currentItem = null;
 
         if (item != null && other.tag == "Pickable")
         {
+            hub.OpenMessagePanel("");
             if (Input.GetKeyDown(KeyCode.F))
             {
                 inventory.AddItem(item);
+                item.OnPickup();
             }
-        }    
+        }   
+        
     }
 }

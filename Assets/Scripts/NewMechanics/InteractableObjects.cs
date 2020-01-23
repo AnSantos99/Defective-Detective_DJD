@@ -13,7 +13,6 @@ public class InteractableObjects : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, 10f))
         {
-
             if (hit.collider.gameObject.tag == "Touchable") // Did it hit the paper?
             {
                 // Show the paper
@@ -21,11 +20,11 @@ public class InteractableObjects : MonoBehaviour
                 Interactable = hit.collider.gameObject;
             }
         }
-    }
+    } 
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) // If the player clicks with the left mouse button
+        if (Input.GetKeyDown(KeyCode.F)) // If the player clicks with the left mouse button
         {
             if (Interactable == null)
             {

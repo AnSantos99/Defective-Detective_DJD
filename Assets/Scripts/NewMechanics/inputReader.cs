@@ -13,6 +13,7 @@ public class inputReader : MonoBehaviour
     private Animator doorAnim;
 
     private GameObject view;
+    
     private ViewController viewScript;
 
     void Start()

@@ -44,9 +44,8 @@ public class Inventory : MonoBehaviour
             }
         }
     }
-
     public void RemoveItem(IInventoryItem item)
-    {
+    {  
         if (mItems.Contains(item))
         {
             mItems.Remove(item);
@@ -66,5 +65,6 @@ public class Inventory : MonoBehaviour
             }
 
         }
+        
     }
 }
