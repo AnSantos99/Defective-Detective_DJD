@@ -12,11 +12,14 @@ public class Notification : MonoBehaviour
     // To get acess the gameobject of notification box
     public GameObject notificationBox;
 
-    GameObject objs;
+    private string message;
+
+    InteractableObjects interActive;
 
     // Start is called before the first frame update
     void Start()
     {
+        DisplayNotification();
         //HideNotification();
     }
 
@@ -26,19 +29,22 @@ public class Notification : MonoBehaviour
 
     }
 
-    public void OnInventoryEnter()
+    public void NotificationMessage() 
     {
-
-
+        
+        /*if (interActive.notificationActive == true)
+        {
+            //DisplayNotification();
+        }*/
     }
-
     /// <summary>
     /// Display Notifications and its message and makes the panel
     /// visible
     /// </summary>
     /// <param name="message"> Gets a message </param>
-    public void DisplayNotification(string message) 
+    public void DisplayNotification() 
     {
+        message = $" was added into your inventory";
         notificationText.text = message;
         notificationBox.SetActive(true);
     }

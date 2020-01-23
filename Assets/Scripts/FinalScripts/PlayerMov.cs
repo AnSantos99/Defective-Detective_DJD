@@ -47,6 +47,8 @@ public class PlayerMov : MonoBehaviour
         walking = true;
 
         charController.SimpleMove(Vector3.ClampMagnitude(forwardMovement + rightMovement, 1.0f) * movementSpeed);
+        
+        //FindObjectOfType<SoundCaller>().Play("PlayerSteps");
 
         SetMovementSpeed();
         JumpInput();

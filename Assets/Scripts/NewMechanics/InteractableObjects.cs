@@ -7,6 +7,7 @@ public class InteractableObjects : MonoBehaviour
     private GameObject Interactable;
 
     public bool soundActive = false;
+    public bool notificationActive = false;
 
     void Touch()
     {
@@ -32,6 +33,7 @@ public class InteractableObjects : MonoBehaviour
             if (Interactable == null)
             {
                 Touch(); // then execute Touch()
+                notificationActive = true;
                 soundActive = true;
             }
             else
