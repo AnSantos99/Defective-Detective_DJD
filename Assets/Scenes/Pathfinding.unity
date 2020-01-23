@@ -12632,7 +12632,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 953961008}
-  - component: {fileID: 953961010}
+  - component: {fileID: 953961011}
   m_Layer: 0
   m_Name: PathF
   m_TagString: Untagged
@@ -12657,7 +12657,7 @@ Transform:
   m_Father: {fileID: 372508958}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &953961010
+--- !u!114 &953961011
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12666,11 +12666,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 953961007}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c10f2f347237fc34ba5d4075758ccdbc, type: 3}
+  m_Script: {fileID: 11500000, guid: 62e7f40539636b14892caf75a9215c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   chicken: {fileID: 7089186630864221240}
+  startPoint: {fileID: 1961938373}
+  endPoint: {fileID: 1237487263}
   startPF: 0
+  speed: 0
 --- !u!1 &955913319
 GameObject:
   m_ObjectHideFlags: 0
@@ -16486,7 +16489,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1237487263}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.202, y: 0.519, z: 2.726}
+  m_LocalPosition: {x: 0.22, y: 0.4842691, z: 2.726}
   m_LocalScale: {x: 0.044866, y: 0.044866, z: 0.044866}
   m_Children: []
   m_Father: {fileID: 953961008}
@@ -16501,7 +16504,7 @@ BoxCollider:
   m_GameObject: {fileID: 1237487263}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -24826,7 +24829,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1961938373}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.22, y: 0.519, z: -1.27}
+  m_LocalPosition: {x: 0.22, y: 0.4842691, z: -1.27}
   m_LocalScale: {x: 0.044866, y: 0.044866, z: 0.044866}
   m_Children: []
   m_Father: {fileID: 953961008}
@@ -24841,7 +24844,7 @@ BoxCollider:
   m_GameObject: {fileID: 1961938373}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -27879,7 +27882,6 @@ GameObject:
   - component: {fileID: 7091545848816890166}
   - component: {fileID: 7147681939732778756}
   - component: {fileID: 7089186630864221241}
-  - component: {fileID: 7089186630864221243}
   m_Layer: 0
   m_Name: KarenPathwalking
   m_TagString: Untagged
@@ -27901,20 +27903,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 0}
---- !u!114 &7089186630864221243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7089186630864221240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36f143cf8dc831141b113528c82d1b82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  oneKaren: 0
-  cutscene: 0
 --- !u!1 &7089354180993926134
 GameObject:
   m_ObjectHideFlags: 0
