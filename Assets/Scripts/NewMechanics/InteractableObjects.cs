@@ -6,6 +6,8 @@ public class InteractableObjects : MonoBehaviour
 {
     private GameObject Interactable;
 
+    public bool soundActive = false;
+
     void Touch()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -30,11 +32,13 @@ public class InteractableObjects : MonoBehaviour
             if (Interactable == null)
             {
                 Touch(); // then execute Touch()
+                soundActive = true;
             }
             else
             {
                 //Interactable.SendMessage("UnTouch");
                 Interactable = null;
+                soundActive = false;
             }
         }
     }

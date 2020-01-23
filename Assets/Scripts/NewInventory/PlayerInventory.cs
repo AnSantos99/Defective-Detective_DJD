@@ -48,6 +48,7 @@ public class PlayerInventory : MonoBehaviour
         if (item != null && other.tag == "Pickable")
         {
             inventory.AddItem(item);
+            
             Debug.Log("ouch");
         }
 

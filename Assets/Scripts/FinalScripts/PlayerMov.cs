@@ -19,7 +19,7 @@ public class PlayerMov : MonoBehaviour
     [SerializeField]private float jumpMultiplier;
     [SerializeField]private KeyCode jumpKey;
 
-    public AudioSource audioSource;
+    //public AudioSource audioSource;
 
     private bool walking = false;
 
@@ -33,7 +33,7 @@ public class PlayerMov : MonoBehaviour
     private void Update()
     {
         PlayerMovement();
-        FootStepSounds();
+        //FootStepSounds();
     }
 
     private void PlayerMovement()
@@ -86,7 +86,7 @@ public class PlayerMov : MonoBehaviour
         isJumping = false;
     }
 
-
+    /*
     private void FootStepSounds() 
     {
         //while (walking == true)
@@ -108,5 +108,5 @@ public class PlayerMov : MonoBehaviour
             audioSource.enabled = false;
 
         
-    }
+    }*/
 }
