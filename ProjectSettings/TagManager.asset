@@ -9,7 +9,7 @@ TagManager:
   - NPC
   - Touchable
   - Slot
-  - speachTrigger
+  - Monologue_PlayerRoom
   layers:
   - Default
   - TransparentFX
