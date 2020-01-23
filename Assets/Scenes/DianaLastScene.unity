@@ -1464,7 +1464,7 @@ GameObject:
   - component: {fileID: 101700364}
   - component: {fileID: 101700363}
   m_Layer: 0
-  m_Name: TestPassword
+  m_Name: password
   m_TagString: Touchable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1496,6 +1496,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0619d29348aeea84e9126544def08caf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Image: {fileID: 21300084, guid: 37607ec1aab56e349af84a980f685a4b, type: 3}
+  PickPosition: {x: 0, y: 0, z: 0}
+  PickRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &101700364
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1504,11 +1507,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 101700361}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.7274448, y: 1.7623777, z: 1.7148215}
-  m_Center: {x: 0.11888865, y: 0.3811891, z: 0.10146882}
+  m_Size: {x: 1.7274449, y: 3.9300084, z: 1.7148215}
+  m_Center: {x: 0.11888868, y: 1.4650041, z: 0.10146878}
 --- !u!23 &101700365
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1555,49 +1558,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 101700361}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &102389079
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 102389080}
-  - component: {fileID: 102389081}
-  m_Layer: 0
-  m_Name: NewInteractablesTest
-  m_TagString: Touchable
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &102389080
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 102389079}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1013218128}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &102389081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 102389079}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a01cdaf4019d13b448bb860bf6ccf7d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &106985637 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: efbc7aaed080d31418251812fc4cfad8,
@@ -2988,7 +2948,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1013218128}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &240219695
 MonoBehaviour:
@@ -4963,7 +4923,7 @@ GameObject:
   - component: {fileID: 340931185}
   m_Layer: 0
   m_Name: InputReader
-  m_TagString: Untagged
+  m_TagString: Touchable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4980,7 +4940,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1013218128}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &340931185
 MonoBehaviour:
@@ -14240,7 +14200,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2109375763}
         m_MethodName: ToggleBookPanel
         m_Mode: 6
         m_Arguments:
@@ -14249,7 +14209,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &952875504
 MonoBehaviour:
@@ -15038,7 +14998,6 @@ Transform:
   m_Children:
   - {fileID: 101700362}
   - {fileID: 4791871845486621}
-  - {fileID: 102389080}
   - {fileID: 340931184}
   - {fileID: 240219694}
   - {fileID: 2046914930}
@@ -16661,6 +16620,7 @@ MonoBehaviour:
   inventory: {fileID: 381083110}
   Hand: {fileID: 1774695549}
   GoItem: {fileID: 0}
+  vc: {fileID: 2109375763}
   hub: {fileID: 673021598}
 --- !u!136 &1176397192
 CapsuleCollider:
@@ -27974,7 +27934,7 @@ Transform:
   m_LocalScale: {x: 0.6140307, y: 1.4550105, z: 0.1079}
   m_Children: []
   m_Father: {fileID: 1013218128}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &2046914931
 Animator:
@@ -30816,7 +30776,12 @@ PrefabInstance:
     - target: {fileID: 1559957434556753757, guid: 244a501decec5f843899e2a712e9a55f,
         type: 3}
       propertyPath: m_Name
-      value: Book
+      value: book
+      objectReference: {fileID: 0}
+    - target: {fileID: 1559957434556753757, guid: 244a501decec5f843899e2a712e9a55f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickable
       objectReference: {fileID: 0}
     - target: {fileID: 1564060363650242875, guid: 244a501decec5f843899e2a712e9a55f,
         type: 3}
@@ -30888,6 +30853,12 @@ PrefabInstance:
       propertyPath: Notes
       value: 
       objectReference: {fileID: 1468638728}
+    - target: {fileID: 1559844932300471131, guid: 244a501decec5f843899e2a712e9a55f,
+        type: 3}
+      propertyPath: _Image
+      value: 
+      objectReference: {fileID: 21300028, guid: 37607ec1aab56e349af84a980f685a4b,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 244a501decec5f843899e2a712e9a55f, type: 3}
 --- !u!1001 &4064623293784718301

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PasswordInteractable : MonoBehaviour
+public class PasswordInteractable : InventoryItemBase
 {
     private GameObject view;
     private ViewController viewScript;
@@ -13,14 +13,21 @@ public class PasswordInteractable : MonoBehaviour
         viewScript = view.GetComponent<ViewController>();
     }
 
-    void OnTouch()
-    {   if(viewScript.passwordCorrect == false)
+    // this is a test of a specific item
+    public override string Name
+    {
+        get
+        {
+            return "passwordReader";
+        }
+    }
+
+    public override void OnUse()
+    {
+        if (viewScript.passwordCorrect == false)
             viewScript.ToggleInputPanel(false);
     }
 
-    void UnTouch()
-    {
-        viewScript.ToggleInputPanel(true);
-    }
+  
     
 }

@@ -62,22 +62,11 @@ public class BookInteractable : InventoryItemBase
 
     public override void OnUse()
     {
-
-        viewScript.ToggleBookPanel(false);
-        NotesAdder.SetNotes("note");
-        NotesAdder.SetNotes("note1");
-
-
-    }
-
-    /*
-    public void OnTouch()
-    {
         viewScript.ToggleBookPanel(false);
         NotesAdder.SetNotes("note");
         NotesAdder.SetNotes("note1");
     }
-    */
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.M) && currentPage < pages.Length)

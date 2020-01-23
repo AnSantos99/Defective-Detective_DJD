@@ -49,20 +49,34 @@ public class PlayerInventory : MonoBehaviour
 
         GameObject goItem = (item as MonoBehaviour).gameObject;
 
-        goItem.SetActive(true);
+        if (item.Name == "passwordReader")
+        {
+            item.OnUse();
+            goItem = null;
+        }
 
-        if (item.Name != "book")
-            goItem.GetComponent<RotateObject>().enabled = true;
+        if (item.Name == "book")
+        {
+            vc.ToggleInventory(true);
+            item.OnUse();
+            GoItem = goItem;
+        }
 
         else
-            vc.ToggleInventory(true);
+        { 
 
-        goItem.transform.parent = Hand.transform;
-        goItem.transform.localPosition = (item as InventoryItemBase).PickPosition;
-        goItem.transform.localEulerAngles = (item as InventoryItemBase).PickRotation;
+            goItem.SetActive(true);
+            goItem.GetComponent<RotateObject>().enabled = true;
+            goItem.transform.parent = Hand.transform;
+            goItem.transform.localPosition = (item as InventoryItemBase).PickPosition;
+            goItem.transform.localEulerAngles = (item as InventoryItemBase).PickRotation;
 
 
-        GoItem = goItem;
+            GoItem = goItem;
+        }
+    
+
+       
     }
 
     // Start is called before the first frame update
@@ -87,12 +101,22 @@ public class PlayerInventory : MonoBehaviour
         if (item != null && other.tag == "Pickable")
         {
             hub.OpenMessagePanel("");
+            
             if (Input.GetKeyDown(KeyCode.F))
             {
                 inventory.AddItem(item);
                 item.OnPickup();
             }
-        }   
-        
+        }
+
+        if (item != null && other.tag == "Touchable")
+        {
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                hub.OpenMessagePanel("");
+                item.OnUse();
+            }
+        }
+
     }
 }
