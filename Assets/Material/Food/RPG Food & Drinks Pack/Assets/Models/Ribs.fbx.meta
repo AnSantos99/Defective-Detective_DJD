@@ -1,44 +1,11 @@
 fileFormatVersion: 2
 guid: 3b4b421f38f16ea4e906bf69529e352c
 ModelImporter:
-  serializedVersion: 22
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: Ribs1/4
-    100004: Ribs2/4
-    100006: Ribs3/4
-    100008: Ribs4/4
-    100010: RibsBones
-    400000: //RootNode
-    400002: Ribs1/4
-    400004: Ribs2/4
-    400006: Ribs3/4
-    400008: Ribs4/4
-    400010: RibsBones
-    2100000: Bones
-    2100002: Ribs
-    2300000: Ribs1/4
-    2300002: Ribs2/4
-    2300004: Ribs3/4
-    2300006: Ribs4/4
-    2300008: RibsBones
-    2300010: //RootNode
-    3300000: Ribs1/4
-    3300002: Ribs2/4
-    3300004: Ribs3/4
-    3300006: Ribs4/4
-    3300008: RibsBones
-    3300010: //RootNode
-    4300000: RibsBones
-    4300002: Ribs4/4
-    4300004: Ribs1/4
-    4300006: Ribs2/4
-    4300008: Ribs3/4
-    4300010: Ribs
-    2186277476908879412: ImportLogs
+  serializedVersion: 26
+  internalIDToNameTable: []
   externalObjects: {}
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -64,12 +31,14 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -77,10 +46,13 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
@@ -92,10 +64,14 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -105,8 +81,8 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1

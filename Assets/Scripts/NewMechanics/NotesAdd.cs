@@ -11,9 +11,9 @@ public class NotesAdd : MonoBehaviour
 
     private TMP_Text getText;
 
-    public GameObject BookPanel;
+   // public GameObject BookPanel;
 
-    private GameObject BookScript;
+    //private GameObject BookScript;
 
     public List<string> PageList;
 
@@ -21,7 +21,11 @@ public class NotesAdd : MonoBehaviour
     void Start()
     {
         //BookPanel = GameObject.FindGameObjectWithTag("viewManager");
-        //BookScript = BookPanel.GetComponent<ViewController>();      
+        //BookScript = BookPanel.GetComponent<ViewController>();   
+
+        //pages[0].text = "Some new line of text.";
+
+        /*
         foreach (GameObject page in pages)
         {
             getText = page.GetComponent<TMP_Text>();
@@ -29,13 +33,11 @@ public class NotesAdd : MonoBehaviour
             // Change the text on the text component.
             getText.text = "Some new line of text.";
 
-            Debug.Log(getText.text);
-  
-        }
-
-        foreach (GameObject page in pages)
             page.SetActive(false);
+        }
+       
         pages[0].SetActive(true);
+        */
 
     }
 
@@ -46,8 +48,17 @@ public class NotesAdd : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        foreach (string pagez in PageList)
-            Debug.Log(pagez);
+    {    
+        getText = pages[0]?.GetComponent<TMP_Text>();
+
+        // Change the text on the text component.
+
+        string addText = getText?.text;
+
+        getText.text += "Some new line of text.";
+
+        pages[0].SetActive(false);        
+
+
     }
 }

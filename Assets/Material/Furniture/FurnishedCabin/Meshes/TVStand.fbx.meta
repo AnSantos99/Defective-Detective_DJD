@@ -1,63 +1,14 @@
 fileFormatVersion: 2
-guid: 49a6824fe442d4dbbbf83484cbb57db1
+guid: 54c05eb9e919b884ebc2893115d978f1
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: grp_doors
-    100002: grp_doorsL
-    100004: grp_doorsR
-    100006: //RootNode
-    100008: tvStandBase
-    100010: tvStandDoor_L
-    100012: tvStandDoor_R
-    100014: tvStandHandle_L
-    100016: tvStandHandle_R
-    100018: tvStandLegs
-    400000: grp_doors
-    400002: grp_doorsL
-    400004: grp_doorsR
-    400006: //RootNode
-    400008: tvStandBase
-    400010: tvStandDoor_L
-    400012: tvStandDoor_R
-    400014: tvStandHandle_L
-    400016: tvStandHandle_R
-    400018: tvStandLegs
-    2300000: tvStandBase
-    2300002: tvStandDoor_L
-    2300004: tvStandDoor_R
-    2300006: tvStandHandle_L
-    2300008: tvStandHandle_R
-    2300010: tvStandLegs
-    3300000: tvStandBase
-    3300002: tvStandDoor_L
-    3300004: tvStandDoor_R
-    3300006: tvStandHandle_L
-    3300008: tvStandHandle_R
-    3300010: tvStandLegs
-    4300000: tvStandBase
-    4300002: tvStandLegs
-    4300004: tvStandDoor_R
-    4300006: tvStandHandle_R
-    4300008: tvStandDoor_L
-    4300010: tvStandHandle_L
-    6400000: tvStandBase
-    6400002: tvStandDoor_L
-    6400004: tvStandDoor_R
-    6400006: tvStandHandle_L
-    6400008: tvStandHandle_R
-    6400010: tvStandLegs
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Doors_TVStand_MAT
-    second: {fileID: 2100000, guid: cdbe46314d4b7ab4ca61d18f0462c8ba, type: 2}
+  serializedVersion: 26
+  internalIDToNameTable: []
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -80,40 +31,47 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    importVisibility: 0
-    importBlendShapes: 0
-    importCameras: 0
-    importLights: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
-    indexFormat: 1
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
-    normalCalculationMode: 0
-  importAnimation: 0
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -123,11 +81,11 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
-    skeletonHasParents: 0
+    skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 0
   humanoidOversampling: 1

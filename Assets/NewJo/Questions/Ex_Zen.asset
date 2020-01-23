@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39f4b1f6d44615f41ab3940474c2ab70, type: 3}
+  m_Name: Ex_Zen
+  m_EditorClassIdentifier: 
+  text: Am I fantsy?
+  choices:
+  - text: Sim
+    conversation: {fileID: 11400000, guid: 6e4edac51c0d6af4597742f3e076aecb, type: 2}
+  - text: F
+    conversation: {fileID: 11400000, guid: 81e5413a488fc6d49bdd961267e95ad4, type: 2}

@@ -42,8 +42,6 @@ public class BookInteractable : MonoBehaviour
             "zen is bastard",
             "is zen the killer?"
         };
-
-
             
         NotesScript = Notes.GetComponent<NotesAdd>();
 
@@ -54,7 +52,8 @@ public class BookInteractable : MonoBehaviour
     public void OnTouch()
     {
         viewScript.ToggleBookPanel(false);
-        //Notes.AddToNotes("note");
+        NotesAdder.SetNotes("note");
+        NotesAdder.SetNotes("note1");
     }
 
     void Update()
@@ -70,5 +69,6 @@ public class BookInteractable : MonoBehaviour
             currentPage -= 1;
             BackwardsPage(currentPage);
         }
+    
     } 
 }

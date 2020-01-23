@@ -1,63 +1,11 @@
 fileFormatVersion: 2
 guid: 81306cd738b0c1b478ccd7f24348c4cc
 ModelImporter:
-  serializedVersion: 22
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: WineBottleOther
-    100004: Liquid1/4
-    100006: Liquid2/4
-    100008: Liquid3/4
-    100010: Liquid4/4
-    100012: WineBottleLiquid1/4
-    100014: WineBottleLiquid2/4
-    100016: WineBottleLiquid3/4
-    100018: WineBottleLiquid4/4
-    400000: //RootNode
-    400002: WineBottleOther
-    400004: Liquid1/4
-    400006: Liquid2/4
-    400008: Liquid3/4
-    400010: Liquid4/4
-    400012: WineBottleLiquid1/4
-    400014: WineBottleLiquid2/4
-    400016: WineBottleLiquid3/4
-    400018: WineBottleLiquid4/4
-    2100000: Material
-    2100002: Material.001
-    2300000: //RootNode
-    2300002: WineBottleOther
-    2300004: Liquid1/4
-    2300006: Liquid2/4
-    2300008: Liquid3/4
-    2300010: Liquid4/4
-    2300012: WineBottleLiquid1/4
-    2300014: WineBottleLiquid2/4
-    2300016: WineBottleLiquid3/4
-    2300018: WineBottleLiquid4/4
-    3300000: //RootNode
-    3300002: WineBottleOther
-    3300004: Liquid1/4
-    3300006: Liquid2/4
-    3300008: Liquid3/4
-    3300010: Liquid4/4
-    3300012: WineBottleLiquid1/4
-    3300014: WineBottleLiquid2/4
-    3300016: WineBottleLiquid3/4
-    3300018: WineBottleLiquid4/4
-    4300000: WineBottle
-    4300002: WineBottleOther
-    4300004: Liquid4/4
-    4300006: Liquid3/4
-    4300008: Liquid1/4
-    4300010: Liquid2/4
-    4300012: WineBottleLiquid4/4
-    4300014: WineBottleLiquid3/4
-    4300016: WineBottleLiquid1/4
-    4300018: WineBottleLiquid2/4
+  serializedVersion: 26
+  internalIDToNameTable: []
   externalObjects: {}
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -83,12 +31,14 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -96,10 +46,13 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
@@ -111,10 +64,14 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -124,8 +81,8 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1

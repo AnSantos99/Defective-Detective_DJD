@@ -1,60 +1,14 @@
 fileFormatVersion: 2
 guid: cdc73258ef2d5ee449fe6d18ccf0122f
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: BathroomSink_Base
-    100004: doorL
-    100006: doorR
-    100008: grp_doorL
-    100010: grp_doorR
-    100012: BathroomSink_base
-    100014: BathroomSink_Bottom
-    100016: BathroomSink_Top
-    400000: //RootNode
-    400002: BathroomSink_Base
-    400004: doorL
-    400006: doorR
-    400008: grp_doorL
-    400010: grp_doorR
-    400012: BathroomSink_base
-    400014: BathroomSink_Bottom
-    400016: BathroomSink_Top
-    2300000: BathroomSink_Base
-    2300002: doorL
-    2300004: doorR
-    2300006: BathroomSink_base
-    2300008: BathroomSink_Bottom
-    2300010: BathroomSink_Top
-    3300000: BathroomSink_Base
-    3300002: doorL
-    3300004: doorR
-    3300006: BathroomSink_base
-    3300008: BathroomSink_Bottom
-    3300010: BathroomSink_Top
-    4300000: BathroomSink_Base
-    4300002: doorR
-    4300004: doorL
-    4300006: BathroomSink_base
-    4300008: BathroomSink_Top
-    4300010: BathroomSink_Bottom
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Bed_Sink_MAT
-    second: {fileID: 2100000, guid: a410a9048765ffe46afbbaee6e46e728, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Plastic_Steel_Handle_MAT
-    second: {fileID: 2100000, guid: f5ccec86270aecc4eab76122584f73fc, type: 2}
+  serializedVersion: 26
+  internalIDToNameTable: []
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -77,40 +31,47 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    importVisibility: 0
-    importBlendShapes: 0
-    importCameras: 0
-    importLights: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
-    indexFormat: 1
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
-    normalCalculationMode: 0
-  importAnimation: 0
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -120,11 +81,11 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
-    skeletonHasParents: 0
+    skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 0
   humanoidOversampling: 1
