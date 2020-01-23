@@ -9,6 +9,7 @@ public class TriggerDoorLock : MonoBehaviour
     void OnTriggerEnter()
     {
         Door.GetComponent<Animator>().SetBool("DoorOpen", false);
-     
+
+        Destroy(this);
     }
 }

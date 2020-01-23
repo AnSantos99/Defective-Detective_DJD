@@ -24,6 +24,12 @@ public class PlayerInventory : MonoBehaviour
 
     public GameObject DoorZen;
 
+    public GameObject DoorLivingRoom;
+
+    public TriggerDoorLock trigger;
+
+    public int counter = 0;
+
     private IInventoryItem mCurrentItem = null;
 
     private void Start()
@@ -113,6 +119,7 @@ public class PlayerInventory : MonoBehaviour
 
         if (item != null && other.tag == "ZamazonKit")
         {
+            trigger.GetComponent<BoxCollider>().enabled = true;
             if (Input.GetKeyDown(KeyCode.F))
             {
                 vc.ToggleKit(false);
@@ -141,6 +148,33 @@ public class PlayerInventory : MonoBehaviour
                     hub.OpenMessagePanel("");
                     item.OnUse();
                 }
+            }
+
+          
+
+            if (item != null && other.tag == "PictureClues")
+            {
+                counter+=1;
+
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    inventory.AddItem(item);
+                    item.OnPickup();
+
+                    GameObject iitem = GameObject.Find(item.Name);
+                    iitem.GetComponent<SpriteRenderer>().enabled=true;
+                 
+                    Destroy(other);
+     
+                    hub.OpenMessagePanel("");
+
+                    Debug.Log(counter);
+                }
+            }
+
+            if(counter >= 4)
+            {
+                DoorLivingRoom.GetComponent<Animator>().SetBool("DoorOpen", true);
             }
 
         }

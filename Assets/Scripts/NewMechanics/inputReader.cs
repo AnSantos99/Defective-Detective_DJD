@@ -27,7 +27,7 @@ public class inputReader : MonoBehaviour
 
     public void GetInput()
     {
-        if (input.text == "yes")
+        if (input.text == "zen is beautiful")
         {
             input.text = "";
             doorAnim.SetBool("DoorOpen", true);
