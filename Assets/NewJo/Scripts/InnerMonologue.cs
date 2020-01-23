@@ -5,6 +5,10 @@ using UnityEngine;
 public class InnerMonologue : MonoBehaviour
 {
     public GameObject[] Monologue;
+    PlayerInventory pi;
+    public GameObject trigger_1;
+    public GameObject trigger_2;
+
 
     [SerializeField]private GameObject current;
 
@@ -29,8 +33,15 @@ public class InnerMonologue : MonoBehaviour
 
         if (other.tag == "Monologue_PlayerRoom")
         {
-            Monologue[3].SetActive(true);
-            current = Monologue[3];
+            Monologue[1].SetActive(true);
+            current = Monologue[1];
+            Debug.Log("Kill");
+        }
+
+        if (other.tag == "Diary")
+        {
+            Monologue[5].SetActive(true);
+            current = Monologue[5];
         }
     }
 
@@ -44,22 +55,31 @@ public class InnerMonologue : MonoBehaviour
 
         if (other.tag == "Monologue_PlayerRoom")
         {
-            Monologue[3].SetActive(true);
-            current = Monologue[3];
-            waitMoment();
-            Monologue[3].SetActive(false);
-            current = Monologue[0];
+            Monologue[2].SetActive(true);
+            current = Monologue[2];
+            Destroy(trigger_1);
 
         }
     }
 
     public void DialogueInputManage()
     {
-        /*if(bool == true)                                  //This is example
+        if (pi.doorOpen == true)
         {
-            Monologue[TheThingy].SetActive(true);
-            current = Monologue[TheThingy];
-        }*/
+            Monologue[3].SetActive(true);
+            current = Monologue[3];
+        }
+
+        if (pi.doorClosed == true)
+        {
+            Monologue[4].SetActive(true);
+            current = Monologue[4];
+        }
+        if(pi.broomFall == true)
+        {
+            Monologue[6].SetActive(true);
+            current = Monologue[6];
+        }
     }
 
     IEnumerator waitMoment()

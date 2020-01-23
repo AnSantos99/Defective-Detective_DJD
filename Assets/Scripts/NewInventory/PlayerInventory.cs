@@ -34,6 +34,10 @@ public class PlayerInventory : MonoBehaviour
 
     RandomDialogues rD;
 
+    public bool doorClosed;
+    public bool doorOpen;
+    public bool broomFall;
+
     private void Start()
     {
         inventory.ItemUsed += Inventory_ItemUsed;
@@ -79,7 +83,9 @@ public class PlayerInventory : MonoBehaviour
             GoItem = goItem;
             Broom.GetComponent<Animator>().SetBool("Fall", true);
             DoorStorage.GetComponent<Animator>().SetBool("DoorOpen", true);
-            // he hears broom and we activate sound!!!!
+            broomFall = true;
+
+            //FindOjbectOfType<AudioSource>().Play("Fallingbroom");
         }
 
         else
@@ -122,6 +128,7 @@ public class PlayerInventory : MonoBehaviour
         if (item != null && other.tag == "ZamazonKit")
         {
             trigger.GetComponent<BoxCollider>().enabled = true;
+            doorClosed = true;
             if (Input.GetKeyDown(KeyCode.F))
             {
                 vc.ToggleKit(false);
@@ -184,6 +191,7 @@ public class PlayerInventory : MonoBehaviour
             if(counter >= 4)
             {
                 DoorLivingRoom.GetComponent<Animator>().SetBool("DoorOpen", true);
+                doorOpen = true;
             }
 
         }
