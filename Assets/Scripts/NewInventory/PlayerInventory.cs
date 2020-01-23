@@ -16,7 +16,9 @@ public class PlayerInventory : MonoBehaviour
 
     public HUB hub;
 
-    //private IInventoryItem item;
+    public GameObject Elmo;
+
+    public Transform tPosition, tRotation;
 
     private IInventoryItem mCurrentItem = null;
 
@@ -104,6 +106,8 @@ public class PlayerInventory : MonoBehaviour
             {
                 vc.ToggleKit(false);
                 vc.InventoryIsActive = true;
+                //FindObjectWithTag("Elmo").SetActive(true);
+                Instantiate(Elmo, tPosition, tRotation);
             }
             
         }

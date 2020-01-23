@@ -11,6 +11,7 @@ TagManager:
   - Slot
   - WrongInput
   - ZamazonKit
+  - Elmo
   layers:
   - Default
   - TransparentFX
