@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DiferentDialogues : MonoBehaviour
 {
-
     public GameObject oldChick;
     public GameObject newChicks;
 
