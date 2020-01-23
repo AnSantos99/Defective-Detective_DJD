@@ -108,25 +108,28 @@ public class PlayerInventory : MonoBehaviour
             
         }
 
-
-        if (item != null && other.tag == "Pickable")
-        {
-            hub.OpenMessagePanel("");
-            
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                inventory.AddItem(item);
-                item.OnPickup();
-            }
-        }
-
-        if (item != null && other.tag == "Touchable")
-        {
-            if (Input.GetKeyDown(KeyCode.F))
+        if(vc.InventoryIsActive == true) 
+        { 
+            if (item != null && other.tag == "Pickable")
             {
                 hub.OpenMessagePanel("");
-                item.OnUse();
+            
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    inventory.AddItem(item);
+                    item.OnPickup();
+                }
             }
+
+            if (item != null && other.tag == "Touchable")
+            {
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    hub.OpenMessagePanel("");
+                    item.OnUse();
+                }
+            }
+
         }
 
     }
