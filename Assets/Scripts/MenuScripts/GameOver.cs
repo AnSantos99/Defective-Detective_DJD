@@ -1,15 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
     public GameObject gameOver;
-
-    void OnTriggerEnter()
+    
+    private void OnTriggerEnter(Collider other)
     {
-        gameOver.SetActive(true);
-        Cursor.visible = gameOver.activeInHierarchy;
-        Time.timeScale = 0;
+        if (other.tag == "Player")
+        {
+            SceneManager.LoadScene(GameOverF);
+        }
     }
 }
