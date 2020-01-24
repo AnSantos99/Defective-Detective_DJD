@@ -40,7 +40,6 @@ public class NPC : MonoBehaviour
     /// </summary>
     void Update()
     {
-        //CharacterBG.position = Camera.main.WorldToScreenPoint(NPCChar.position + Vector3.up + 7f);
         Vector3 pos = Camera.main.WorldToScreenPoint(NPCChar.position);
         pos.y += 175;
         CharBG.position = pos;
