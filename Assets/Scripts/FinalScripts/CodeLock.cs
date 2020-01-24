@@ -30,11 +30,12 @@ public class CodeLock : MonoBehaviour
         {
             StartCoroutine(Open());
             caseInside.SetActive(true);
+            FindObjectOfType<SoundManager>().Play("CodeRight");
         }
         else
         {
             StartCoroutine(ShowWrongInputMessage());
-           
+            FindObjectOfType<SoundManager>().Play("CodeWrong");
         }
     }
 
