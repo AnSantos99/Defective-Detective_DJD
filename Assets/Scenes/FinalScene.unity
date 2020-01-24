@@ -4247,7 +4247,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4303844821561524, guid: 312b31977ed9b2d48a14849ebb8c7fb3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -19.734985
+      value: -19.827
       objectReference: {fileID: 0}
     - target: {fileID: 4303844821561524, guid: 312b31977ed9b2d48a14849ebb8c7fb3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4259,7 +4259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4303844821561524, guid: 312b31977ed9b2d48a14849ebb8c7fb3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.07689308
       objectReference: {fileID: 0}
     - target: {fileID: 4303844821561524, guid: 312b31977ed9b2d48a14849ebb8c7fb3, type: 3}
       propertyPath: m_LocalRotation.z
@@ -4267,7 +4267,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4303844821561524, guid: 312b31977ed9b2d48a14849ebb8c7fb3, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9970393
       objectReference: {fileID: 0}
     - target: {fileID: 4303844821561524, guid: 312b31977ed9b2d48a14849ebb8c7fb3, type: 3}
       propertyPath: m_RootOrder
@@ -4279,7 +4279,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4303844821561524, guid: 312b31977ed9b2d48a14849ebb8c7fb3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 8.82
       objectReference: {fileID: 0}
     - target: {fileID: 4303844821561524, guid: 312b31977ed9b2d48a14849ebb8c7fb3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -4334,9 +4334,15 @@ MonoBehaviour:
   NPCChar: {fileID: 668221648}
   Name: Nugget
   sentences:
-  - "Zen:\n  have you checked my- elmo's last tweet?"
-  - "Zen:\n  I'm so pretty i could die!"
-  - "Zen:\n  if looks could kill.... wait a minute....... it wasn't me!"
+  - 'Elmo:
+
+    I''m so exited!'
+  - 'Elmo:
+
+    I came up with a song for you, I bet you''ll love it!'
+  - 'Elmo:
+
+    Me and Zen are in the Choir together! It''s so much fun!'
 --- !u!1 &317106253
 GameObject:
   m_ObjectHideFlags: 0
@@ -9508,9 +9514,13 @@ MonoBehaviour:
   NPCChar: {fileID: 668221648}
   Name: Nugget
   sentences:
-  - "Zen:\n  have you checked my- elmo's last tweet?"
-  - "Zen:\n  I'm so pretty i could die!"
-  - "Zen:\n  if looks could kill.... wait a minute....... it wasn't me!"
+  - 'Zen:
+
+    I''m so beautiful!'
+  - "Zen:\nC'mon! Say it with me! \xABzen is beautifu\xBB"
+  - 'Zen:
+
+    Happy birthday!... To me of course!'
 --- !u!65 &668221652
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12461,7 +12471,12 @@ MonoBehaviour:
   NPCChar: {fileID: 880906015}
   Name: Nugget
   sentences:
-  - scene two part 2 :3
+  - 'Karen:
+
+    I don''t think he''s breathig.'
+  - 'Karen:
+
+    Shouldn''t we call the cops??'
 --- !u!65 &880906018
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14720,9 +14735,15 @@ MonoBehaviour:
   NPCChar: {fileID: 1050302244}
   Name: Nugget
   sentences:
-  - 
-  - 
-  - 
+  - 'Pablo:
+
+    Oh my god! I bet I''m the one cleaning this mess up afterwards!'
+  - 'Pablo:
+
+    This surprise is going to be great!'
+  - 'Pablo:
+
+    I''m stressed out, too much chaos. Go away.'
 --- !u!65 &1050302247
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23288,9 +23309,15 @@ MonoBehaviour:
   NPCChar: {fileID: 1715942834}
   Name: Nugget
   sentences:
-  - 
-  - 
-  - 
+  - 'Pablo:
+
+    Oh no, oh no...'
+  - 'Pablo:
+
+    I swear it wasn''t me! '
+  - 'Pablo:
+
+    Tweet! Tweet!'
 --- !u!65 &1715942837
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26342,8 +26369,12 @@ MonoBehaviour:
   NPCChar: {fileID: 1981420483}
   Name: Nugget
   sentences:
-  - "Zen:\n  have you checked my- elmo's last tweet?"
-  - "Zen:\n  I'm so pretty i could die!"
+  - 'Zen:
+
+    Stress is not good for my skin.'
+  - 'Zen:
+
+    I should writte a book! "zen is beautiful".'
   - "Zen:\n  if looks could kill.... wait a minute....... it wasn't me!"
 --- !u!114 &1981420486
 MonoBehaviour:
@@ -27114,7 +27145,12 @@ MonoBehaviour:
   NPCChar: {fileID: 1998506000}
   Name: Nugget
   sentences:
-  - scene two part 2 :3
+  - 'Karen:
+
+    I wish I wasn''t here.'
+  - 'Kare:
+
+    Happy birthday tho.'
 --- !u!65 &1998506003
 BoxCollider:
   m_ObjectHideFlags: 0
