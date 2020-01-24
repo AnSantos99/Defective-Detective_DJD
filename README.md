@@ -39,3 +39,5 @@ API do Unity, https://www.youtube.com/watch?v=90OiysC4j5Y&list=PLboXykqtm8dynMis
 
 **For Diagrams**
 <https://www.draw.io/>
+
+Na classe do monológo, o aluno Pedro Inácio (a21802050) ajudou com as co-rotinas e facilitou a mudança entre os diálogos das galinhas.
