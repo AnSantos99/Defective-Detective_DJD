@@ -18,6 +18,9 @@ public class SoundManager: MonoBehaviour
             // And set a default clip for playing the sound
             s.source.clip = s.clip;
 
+
+            s.source.mix = s.mix;
+
             // Set the volume available
             s.source.volume = s.volume;
 

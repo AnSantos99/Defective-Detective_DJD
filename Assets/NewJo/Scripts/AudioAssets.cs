@@ -7,6 +7,8 @@ public class AudioAssets
     public string name;
 
     public AudioClip clip;
+    public AudioMixer mix;
+
     [Range(0f, 1f)]
     public float volume;
 

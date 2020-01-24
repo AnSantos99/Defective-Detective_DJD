@@ -99,6 +99,8 @@ public class PlayerMov : MonoBehaviour
             _animator.SetBool("Run", true);
             _animator.SetBool("Walk", false);
             movementSpeed = Mathf.Lerp(movementSpeed, runSpeed, Time.deltaTime * runBuildUpSpeed);
+            FindObjectOfType<SoundManager>().Play("Steps");
+
         }
 
         // Else if the input is not the input then set the run to false and walk
@@ -108,6 +110,7 @@ public class PlayerMov : MonoBehaviour
             _animator.SetBool("Run", false);
             walking = true;
             movementSpeed = Mathf.Clamp(movementSpeed, walkSpeed, Time.deltaTime * runBuildUpSpeed);
+            FindObjectOfType<SoundManager>().Play("Steps");
         }
     }
 
