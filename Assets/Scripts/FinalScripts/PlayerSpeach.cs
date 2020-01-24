@@ -24,7 +24,7 @@ public class PlayerSpeach : MonoBehaviour
     
     void Update()
     {
-        //CharacterBG.position = Camera.main.WorldToScreenPoint(NPCChar.position + Vector3.up + 7f);
+       
         Vector3 pos = Camera.main.WorldToScreenPoint(NPCChar.position);
         pos.y += 175;
         CharBG.position = pos;
@@ -33,7 +33,7 @@ public class PlayerSpeach : MonoBehaviour
     public void OnTriggerStay(Collider other)
     {
         this.gameObject.GetComponent<PlayerSpeach>().enabled = true;
-        //FindObjectOfType<DialogueSystem>().EnterRangeOfNPC();
+
         if ((other.gameObject.tag == "speachTrigger"))
         {
             this.gameObject.GetComponent<PlayerSpeach>().enabled = true;
