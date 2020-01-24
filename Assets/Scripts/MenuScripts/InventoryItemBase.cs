@@ -43,4 +43,7 @@ public class InventoryItemBase : MonoBehaviour, IInventoryItem
     {
         gameObject.SetActive(false);
     }
+
+    public Vector3 PickPosition;
+    public Vector3 PickRotation;
 }

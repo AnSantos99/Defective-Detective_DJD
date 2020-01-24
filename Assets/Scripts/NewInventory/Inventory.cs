@@ -3,6 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// this class sets the inventory for the player with the limited slot number
+/// and handles events to add and use
+/// </summary>
 public class Inventory : MonoBehaviour
 {
     private const int _slots = 8;
@@ -10,8 +14,6 @@ public class Inventory : MonoBehaviour
     private List<IInventoryItem> mItems = new List<IInventoryItem>();
 
     public event EventHandler<InventoryEventArgs> ItemAdded;
-
-    public event EventHandler<InventoryEventArgs> ItemRemoved;
 
     public event EventHandler<InventoryEventArgs> ItemUsed;
 
@@ -43,28 +45,5 @@ public class Inventory : MonoBehaviour
                 }
             }
         }
-    }
-    public void RemoveItem(IInventoryItem item)
-    {  
-        if (mItems.Contains(item))
-        {
-            mItems.Remove(item);
-
-            item.OnDrop();
-
-            Collider collider = (item as MonoBehaviour).GetComponent<Collider>();
-
-            if (collider != null)
-            {
-                collider.enabled = true;       
-            }
-
-            if(ItemRemoved != null)
-            {
-                ItemRemoved(this, new InventoryEventArgs(item));
-            }
-
-        }
-        
     }
 }
