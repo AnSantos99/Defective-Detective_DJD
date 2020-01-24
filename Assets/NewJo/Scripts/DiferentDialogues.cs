@@ -2,63 +2,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RandomDialogues : MonoBehaviour
+public class DiferentDialogues : MonoBehaviour
 {
-    public GameObject[] objectPool;
-
-    public GameObject[] objectPool_2;
-
-    private int currentIndex = 0;
-
-    public int newIndex;
-
-    public GameObject SceneManag_1;
-    public GameObject SceneManag_2;
+    public GameObject oldChick;
+    public GameObject newChicks;
 
     public bool Scene_1 = true;
     public bool Scene_2 = false;
 
+    public PlayerInventory pi;
+
     // Start is called before the first frame update
     void Start()
     {
-        Scene_1 = false;
-        Scene_2 = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        RandomDialog();
+        if(Scene_1 != pi.s_1 || Scene_2 != pi.s_2)
+        {
+            Scene_1 = pi.s_1;
+            Scene_2 = pi.s_2;
+        }
+        ChangeChar();
     }
 
-    public void RandomDialog()
+    public void ChangeChar()
     {
-        if(Scene_1 == true)
+        if (Scene_1 == false && Scene_2 == true)
         {
-            SceneManag_1.SetActive(true);
-            objectPool[currentIndex].SetActive(false);
-            currentIndex = newIndex;
-            objectPool[currentIndex].SetActive(true);
+            oldChick.SetActive(false);
+            newChicks.SetActive(true);
         }
-
-        if (Scene_2 == true)
+        else
         {
-            SceneManag_2.SetActive(true);
-            objectPool_2[currentIndex].SetActive(false);
-            currentIndex = newIndex;
-            objectPool_2[currentIndex].SetActive(true);
-        }
-    }
-
-    public void SwitchScene()
-    {
-        if (Scene_1 == true)
-        {
-            newIndex = Random.Range(0, objectPool.Length);
-        }
-        if (Scene_2 == true)
-        {
-            newIndex = Random.Range(0, objectPool_2.Length);
+            oldChick.SetActive(true);
+            newChicks.SetActive(false);
         }
     }
 }

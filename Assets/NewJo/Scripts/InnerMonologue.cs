@@ -1,64 +1,56 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class InnerMonologue : MonoBehaviour
 {
     public GameObject[] Monologue;
-    PlayerInventory pi;
+    public PlayerInventory pi;
     public GameObject trigger_1;
     public GameObject trigger_2;
+    private bool crRunning;
+    Action coroutineCalls;
 
-
-    [SerializeField]private GameObject current;
+    [SerializeField] private GameObject current;
 
     // Start is called before the first frame update
     void Start()
     {
+        //StartCoroutine(waitMoment());
 
     }
 
     private void Update()
     {
         DialogueInputManage();
+
     }
 
     void OnTriggerEnter(Collider other)
     {
-        /*if (other.tag == "TagOfTheObj")      //This is example
-        {
-            Monologue[TheThingy].SetActive(true);
-            current = Monologue[TheThingy];
-        }*/
 
         if (other.tag == "Monologue_PlayerRoom")
         {
-            Monologue[1].SetActive(true);
-            current = Monologue[1];
-            Debug.Log("Kill");
+            ClearInvocationList();
+            StartCoroutine(DisplayMonologue(1, coroutineCalls));
         }
 
         if (other.tag == "Diary")
         {
-            Monologue[5].SetActive(true);
-            current = Monologue[5];
+            ClearInvocationList();
+            coroutineCalls = delegate () { Destroy(trigger_2); };
+            StartCoroutine(DisplayMonologue(5, coroutineCalls));
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        /*if (other.tag == "TagOfTheObj")      //This is example
-        {
-            Monologue[TheThingy].SetActive(false);
-            current = Monologue[TheThingy];
-        }*/
-
         if (other.tag == "Monologue_PlayerRoom")
         {
-            Monologue[2].SetActive(true);
-            current = Monologue[2];
-            Destroy(trigger_1);
-
+            ClearInvocationList();
+            coroutineCalls = delegate () { Destroy(trigger_1); };
+            DisplayMonologue(2, coroutineCalls);
         }
     }
 
@@ -66,24 +58,35 @@ public class InnerMonologue : MonoBehaviour
     {
         if (pi.doorOpen == true)
         {
-            Monologue[3].SetActive(true);
-            current = Monologue[3];
+            ClearInvocationList();
+            StartCoroutine(DisplayMonologue(3, coroutineCalls));
         }
 
         if (pi.doorClosed == true)
         {
-            Monologue[4].SetActive(true);
-            current = Monologue[4];
+            ClearInvocationList();
+            StartCoroutine(DisplayMonologue(4, coroutineCalls));
         }
-        if(pi.broomFall == true)
+        if (pi.broomFall == true)
         {
-            Monologue[6].SetActive(true);
-            current = Monologue[6];
+            ClearInvocationList();
+            StartCoroutine(DisplayMonologue(6, coroutineCalls));
         }
     }
 
-    IEnumerator waitMoment()
+    private void ClearInvocationList()
     {
-        yield return new WaitForSeconds(0.2f);
+        // clears the invocation list array of the coroutineCalls delegate, effectively wiping it clean
+        // Array.Clear(coroutineCalls.GetInvocationList(), 0, coroutineCalls.GetInvocationList().Length);
+    }
+
+    IEnumerator DisplayMonologue(int i, Action coroutineCalls)
+    {
+        Monologue[i].SetActive(true);
+        current = Monologue[i];
+        yield return new WaitForSeconds(5);
+        coroutineCalls();
+        Monologue[i].SetActive(false);
+        current = Monologue[0];
     }
 }

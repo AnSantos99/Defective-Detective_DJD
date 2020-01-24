@@ -31,18 +31,20 @@ public class PlayerInventory : MonoBehaviour
     public int counter = 0;
 
     private IInventoryItem mCurrentItem = null;
-
-    RandomDialogues rD;
-    DiferentDialogues dd;
+    
+    public DiferentDialogues dd;
 
     public bool doorClosed;
     public bool doorOpen;
     public bool broomFall;
+    public bool s_1;
+    public bool s_2;
 
     private void Start()
     {
         inventory.ItemUsed += Inventory_ItemUsed;
         RotActive = true;
+        s_1 = true;
     }
 
     public void Activate(bool rotActive)
@@ -51,7 +53,8 @@ public class PlayerInventory : MonoBehaviour
     }
 
     private void Update()
-    {      
+    {
+
         if (Input.GetKeyDown(KeyCode.R) || !RotActive && GoItem != null)
         {
             GoItem.SetActive(false);
@@ -135,15 +138,8 @@ public class PlayerInventory : MonoBehaviour
                 vc.ToggleKit(false);
                 vc.InventoryIsActive = true;
                 Instantiate(Elmo);
-                dd.Scene_1 = false;
-                dd.Scene_2 = true;
-
-                //change of 'scene'
-                if (rD.Scene_1 == true)
-                {
-                    rD.Scene_1 = false;
-                    rD.Scene_2 = true;
-                }
+                s_1 = false;
+                s_2 = true;
             }
         }
 
