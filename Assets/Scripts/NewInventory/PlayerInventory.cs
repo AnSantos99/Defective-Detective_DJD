@@ -33,6 +33,7 @@ public class PlayerInventory : MonoBehaviour
     private IInventoryItem mCurrentItem = null;
 
     RandomDialogues rD;
+    DiferentDialogues dd;
 
     public bool doorClosed;
     public bool doorOpen;
@@ -134,9 +135,11 @@ public class PlayerInventory : MonoBehaviour
                 vc.ToggleKit(false);
                 vc.InventoryIsActive = true;
                 Instantiate(Elmo);
+                dd.Scene_1 = false;
+                dd.Scene_2 = true;
 
                 //change of 'scene'
-                if(rD.Scene_1 == true)
+                if (rD.Scene_1 == true)
                 {
                     rD.Scene_1 = false;
                     rD.Scene_2 = true;
