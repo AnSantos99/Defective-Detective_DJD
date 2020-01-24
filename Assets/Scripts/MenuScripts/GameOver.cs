@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// this class allows us to show a game over scene when the player hits a 
@@ -12,16 +13,10 @@ public class GameOver : MonoBehaviour
     /// the game over panel
     /// </summary>
     public GameObject gameOver;
+    [SerializeField] string gameOverScene;
 
     void OnTriggerEnter()
     {
-        // set active panel
-        gameOver.SetActive(true);
-
-        // set active cursor
-        Cursor.visible = gameOver.activeInHierarchy;
-
-        // stop time
-        Time.timeScale = 0;
+        SceneManager.LoadScene(gameOverScene);
     }
 }

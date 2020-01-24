@@ -1,30 +1,51 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class represents the players movement
+/// </summary>
 public class PlayerMov : MonoBehaviour
 {
+    // To get the input of the keyboard
     [SerializeField]private string horizontalInputName;
     [SerializeField]private string verticalInputName;
 
+    // get the walk and run speed
     [SerializeField]private float walkSpeed, runSpeed;
+
+    // To calculate the speed
     [SerializeField]private float runBuildUpSpeed;
+
+    // Get the key for run
     [SerializeField]private KeyCode runKey;
 
+    // To calculate the movement speed
     private float movementSpeed;
 
+    // To check the state
     private bool walking;
 
+    // Variable of characterController to acess it
     private CharacterController charController;
 
+    // For the calculations of the jump
     [SerializeField]private AnimationCurve jumpFallOff;
+
+    // For the jump
     [SerializeField]private float jumpMultiplier;
+
+    // Serializedfield to get the keycode for jump
     [SerializeField]private KeyCode jumpKey;
 
+    // bool to check state
     private bool isJumping;
 
-   private Animator _animator;
+    // Get the animator to be able to acess it
+    private Animator _animator;
 
+    /// <summary>
+    /// Get Player controler and animator and set the walking to false
+    /// </summary>
     private void Awake()
     {
         charController = GetComponent<CharacterController>();
@@ -32,6 +53,11 @@ public class PlayerMov : MonoBehaviour
         walking = false;
     }
 
+    /// <summary>
+    /// Update on each frame the playermovement and if walkinf is not activ
+    /// set the walk and run animations to false so the player doesnt have
+    /// the animation on idle
+    /// </summary>
     private void Update()
     {
         PlayerMovement();
@@ -43,6 +69,10 @@ public class PlayerMov : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Method to set the player movement by getting the x and y axis to get
+    /// the input to be able to move the player
+    /// </summary>
     private void PlayerMovement()
     {
         float horizInput = Input.GetAxis(horizontalInputName);
@@ -57,8 +87,12 @@ public class PlayerMov : MonoBehaviour
         JumpInput();
     }
 
+    /// <summary>
+    /// Method to set the players movement speed
+    /// </summary>
     private void SetMovementSpeed()
     {
+        // Run if the input is a run 
         if (Input.GetKey(runKey))
         {
             walking = true;
@@ -67,6 +101,7 @@ public class PlayerMov : MonoBehaviour
             movementSpeed = Mathf.Lerp(movementSpeed, runSpeed, Time.deltaTime * runBuildUpSpeed);
         }
 
+        // Else if the input is not the input then set the run to false and walk
         else
         {
             _animator.SetBool("Walk", true);
@@ -76,6 +111,10 @@ public class PlayerMov : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Method that checks players input and if the input is the given jumpkey
+    /// they player will jump and follow the event on a Coroutine
+    /// </summary>
     private void JumpInput()
     {
         if(Input.GetKeyDown(jumpKey) && !isJumping)
@@ -85,6 +124,11 @@ public class PlayerMov : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Method that calculates the jump and yield returns its value so the jump
+    /// is smooth and not a harsh line jump
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator JumpEvent()
     {
         charController.slopeLimit = 90.0f;
