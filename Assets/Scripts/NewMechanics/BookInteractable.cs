@@ -65,6 +65,7 @@ public class BookInteractable : InventoryItemBase
         viewScript.ToggleBookPanel(false);
         NotesAdder.SetNotes("note");
         NotesAdder.SetNotes("note1");
+        FindObjectOfType<SoundManager>().Play("Pagebook"); //NEW
     }
 
     void Update()

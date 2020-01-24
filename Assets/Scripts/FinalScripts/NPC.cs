@@ -40,6 +40,7 @@ public class NPC : MonoBehaviour
             dialogueSys.name = name;
             dialogueSys.dialogueLines = sentences;
             FindObjectOfType<DialogueSystem>().NPCName();
+            FindObjectOfType<SoundManager>().Play("Dialogue");
         }
     }
 

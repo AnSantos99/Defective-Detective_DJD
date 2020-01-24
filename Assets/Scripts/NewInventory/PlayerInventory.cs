@@ -86,10 +86,10 @@ public class PlayerInventory : MonoBehaviour
             vc.ToggleInventory(true);
             GoItem = goItem;
             Broom.GetComponent<Animator>().SetBool("Fall", true);
+            //FindObjectOfType<SoundManager>().Play("Pagebook"); //NEW
             DoorStorage.GetComponent<Animator>().SetBool("DoorOpen", true);
             broomFall = true;
-
-            //FindOjbectOfType<AudioSource>().Play("Fallingbroom");
+            FindObjectOfType<SoundManager>().Play("Pagebook");
         }
 
         else
@@ -183,6 +183,8 @@ public class PlayerInventory : MonoBehaviour
      
                     hub.OpenMessagePanel("");
 
+                    
+
                     Debug.Log(counter);
                 }
             }
@@ -191,6 +193,7 @@ public class PlayerInventory : MonoBehaviour
             {
                 DoorLivingRoom.GetComponent<Animator>().SetBool("DoorOpen", true);
                 doorOpen = true;
+                FindObjectOfType<SoundManager>().Play("DoorOpen");
             }
 
         }
