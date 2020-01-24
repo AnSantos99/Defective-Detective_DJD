@@ -31,6 +31,7 @@ Existe também um menu principal que permite fazer load de scenes e navegar entr
 ### UML Diagram
 
 O seguinte diagrama descreve a estrutura de classes do projeto e as conexões entre cada classe.
+![UML Diagram](uml_diagram.png)
 
 ## References
 
