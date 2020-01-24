@@ -6,11 +6,10 @@ using UnityEngine.EventSystems;
 
 public class InventoryToggler : InventoryItemBase
 {
+    
     private GameObject view;
 
     private ViewController viewScript;
-
-
 
     public GameObject InventoryComponents;
 

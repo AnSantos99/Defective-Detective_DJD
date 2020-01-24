@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+/// <summary>
+/// interface that defines an item from inventory
+/// </summary>
 public interface IInventoryItem
     {
         string Name { get; }
@@ -16,6 +19,9 @@ public interface IInventoryItem
 
     }
 
+/// <summary>
+/// inventory event
+/// </summary>
 public class InventoryEventArgs : EventArgs
     {
         public InventoryEventArgs(IInventoryItem item)
