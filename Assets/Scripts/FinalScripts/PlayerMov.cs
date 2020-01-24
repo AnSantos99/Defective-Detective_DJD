@@ -16,6 +16,7 @@ public class PlayerMov : MonoBehaviour
     private bool walking;
 
     private CharacterController charController;
+    //private AudioAssets aa;
 
     [SerializeField]private AnimationCurve jumpFallOff;
     [SerializeField]private float jumpMultiplier;
@@ -45,6 +46,10 @@ public class PlayerMov : MonoBehaviour
         if(Input.GetKeyDown("w") || Input.GetKeyDown("a") || Input.GetKeyDown("s") || Input.GetKeyDown("d"))
         {
             FindObjectOfType<SoundManager>().Play("Steps");
+        }
+        if(Input.GetKeyUp("w") || Input.GetKeyUp("a") || Input.GetKeyUp("s") || Input.GetKeyUp("d"))
+        {
+            FindObjectOfType<SoundManager>().Stop("Steps");
         }
     }
 

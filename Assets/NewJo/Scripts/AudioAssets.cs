@@ -7,6 +7,7 @@ public class AudioAssets
     public string name;
 
     public AudioClip clip;
+    [SerializeField]public AudioMixerGroup audioMixer;
     [Range(0f, 1f)]
     public float volume;
 
