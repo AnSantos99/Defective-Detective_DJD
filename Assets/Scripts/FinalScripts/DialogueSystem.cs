@@ -4,8 +4,12 @@ using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// Class to start dialoguesystem
+/// </summary>
 public class DialogueSystem : MonoBehaviour
 {
+    // Get the name of the text
     public TMP_Text nameText;
     public TMP_Text dialogueText;
 

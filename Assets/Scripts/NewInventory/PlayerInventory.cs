@@ -2,38 +2,77 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// this class let's us control our current player's inventory
+/// </summary>
 public class PlayerInventory : MonoBehaviour
 {
+    /// <summary>
+    /// gets inventory from scene
+    /// </summary>
     public Inventory inventory;
 
+    /// <summary>
+    /// let's us place objects for view and rotate in front of player
+    /// </summary>
     public GameObject Hand;
 
+    /// <summary>
+    /// item in hand
+    /// </summary>
     public GameObject GoItem;
 
+    /// <summary>
+    /// check if rotation script is active
+    /// </summary>
     private bool RotActive;
 
+    /// <summary>
+    /// view controller to set panels
+    /// </summary>
     public ViewController vc;
 
+    /// <summary>
+    /// hub to toggle and control inventory
+    /// </summary>
     public HUB hub;
 
+    /// <summary>
+    /// call dead chicken prefab
+    /// </summary>
     public GameObject Elmo;
 
+    /// <summary>
+    /// get broom to fall down
+    /// </summary>
     public GameObject Broom;
 
+    /// <summary>
+    /// get doors
+    /// </summary>
     public GameObject DoorStorage;
 
     public GameObject DoorZen;
 
     public GameObject DoorLivingRoom;
 
+    /// <summary>
+    /// get door trigger
+    /// </summary>
     public TriggerDoorLock trigger;
 
+    /// <summary>
+    /// to open door
+    /// </summary>
     public int counter = 0;
 
-    private IInventoryItem mCurrentItem = null;
-    
+    /// <summary>
+    /// getting random dialogue
     public DiferentDialogues dd;
 
+    /// <summary>
+    /// check if door is closed, open and if broom is falling
+    /// </summary>
     public bool doorClosed;
     public bool doorOpen;
     public bool broomFall;
@@ -42,39 +81,55 @@ public class PlayerInventory : MonoBehaviour
 
     private void Start()
     {
+        // getting event
         inventory.ItemUsed += Inventory_ItemUsed;
-        RotActive = true;
+
         s_1 = true;
+        // set rotation to true
+        RotActive = false;
     }
 
+    /// <summary>
+    /// activate or deactivate rotation
+    /// </summary>
+    /// <param name="rotActive"></param>
     public void Activate(bool rotActive)
     {
-        RotActive= rotActive;
+        RotActive = rotActive;
     }
 
     private void Update()
     {
-
+        // checking if player has untoggled rotation
         if (Input.GetKeyDown(KeyCode.R) || !RotActive && GoItem != null)
         {
+            // disable item
             GoItem.SetActive(false);
 
+            // enable script
             GoItem.GetComponent<RotateObject>().enabled = true;
 
+            // set rotactive to true
             RotActive = true;
         }
     }
 
+    /// <summary>
+    /// this method let's us check when item is being used
+    /// </summary>
     private void Inventory_ItemUsed(object sender, InventoryEventArgs e)
     {
+        // get itemm from inventory event
         IInventoryItem item = e.Item;
 
+        // current item
         GameObject goItem;
 
+        // check item's name for password actions toggle
         if (item.Name == "passwordReader")
         {
+            // set item as monobehaviour for manipulation
             goItem = (item as MonoBehaviour).gameObject;
-
             item.OnUse();
             goItem = null;
         }
@@ -92,6 +147,7 @@ public class PlayerInventory : MonoBehaviour
             //FindOjbectOfType<AudioSource>().Play("Fallingbroom");
         }
 
+        // for items without problems
         else
         {
             goItem = (item as MonoBehaviour).gameObject;
@@ -99,17 +155,18 @@ public class PlayerInventory : MonoBehaviour
             goItem.SetActive(true);
             goItem.GetComponent<RotateObject>().enabled = true;
             goItem.transform.parent = Hand.transform;
-            goItem.transform.localPosition = (item as InventoryItemBase).PickPosition;
-            goItem.transform.localEulerAngles = (item as InventoryItemBase).PickRotation;
+            goItem.transform.localPosition = 
+                (item as InventoryItemBase).PickPosition;
+            goItem.transform.localEulerAngles = 
+                (item as InventoryItemBase).PickRotation;
 
             GoItem = goItem;
         }
 
         GoItem = goItem;
-
     }
 
-    // Start is called before the first frame update
+    // check collision for toggle of hub
     void OnTriggerEnter(Collider other)
     {
         hub.OpenMessagePanel("");
@@ -121,7 +178,7 @@ public class PlayerInventory : MonoBehaviour
         hub.CloseMessagePanel();
     }
 
-    // Start is called before the first frame update
+    // check collision for actions depending on the type of interactable
     void OnTriggerStay(Collider other)
     {
         IInventoryItem item = other.GetComponent<IInventoryItem>();
@@ -156,6 +213,7 @@ public class PlayerInventory : MonoBehaviour
                 }
             }
 
+            // check if interacting with touchable items
             if (item != null && other.tag == "Touchable")
             {
                 if (Input.GetKeyDown(KeyCode.F))
@@ -164,9 +222,8 @@ public class PlayerInventory : MonoBehaviour
                     item.OnUse();
                 }
             }
-
           
-
+            // check if interacting with images
             if (item != null && other.tag == "PictureClues")
             {
                 counter+=1;
