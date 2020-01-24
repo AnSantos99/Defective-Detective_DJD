@@ -11,7 +11,7 @@ public class GameOver : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            SceneManager.LoadScene(GameOverF);
+            SceneManager.LoadScene("GameOverF");
         }
     }
 }

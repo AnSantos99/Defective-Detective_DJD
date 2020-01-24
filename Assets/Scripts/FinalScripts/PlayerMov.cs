@@ -41,6 +41,11 @@ public class PlayerMov : MonoBehaviour
             _animator.SetBool("Walk", false);
             _animator.SetBool("Run", false);
         }
+
+        if(Input.GetKeyDown("w") || Input.GetKeyDown("a") || Input.GetKeyDown("s") || Input.GetKeyDown("d"))
+        {
+            FindObjectOfType<SoundManager>().Play("Steps");
+        }
     }
 
     private void PlayerMovement()
