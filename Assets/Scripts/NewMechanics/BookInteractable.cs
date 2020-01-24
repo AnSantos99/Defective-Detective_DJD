@@ -13,12 +13,6 @@ public class BookInteractable : InventoryItemBase
 
     public GameObject[] pages;
 
-    public GameObject Notes;
-
-    private string[] notesToAdd;
-
-    private NotesAdd NotesScript;
-
     void Start()
     {
         view = GameObject.FindGameObjectWithTag("viewManager");
@@ -38,17 +32,6 @@ public class BookInteractable : InventoryItemBase
     {
         pages[page].SetActive(true);
         pages[page + 1].SetActive(false);
-
-        notesToAdd = new string[]
-        {
-            "zen is bastard",
-            "is zen the killer?"
-        };
-            
-        NotesScript = Notes.GetComponent<NotesAdd>();
-
-        foreach (string note in notesToAdd)
-            NotesScript.PageList.Add(note);
     }
 
     // this is a test of a specific item
@@ -63,8 +46,6 @@ public class BookInteractable : InventoryItemBase
     public override void OnUse()
     {
         viewScript.ToggleBookPanel(false);
-        NotesAdder.SetNotes("note");
-        NotesAdder.SetNotes("note1");
     }
 
     void Update()

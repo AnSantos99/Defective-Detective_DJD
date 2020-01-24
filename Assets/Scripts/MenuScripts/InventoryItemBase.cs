@@ -2,8 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// this class let's us get a generic type of item for our inventory
+/// </summary>
 public class InventoryItemBase : MonoBehaviour, IInventoryItem
 {
+    /// <summary>
+    /// the name of the item
+    /// </summary>
     public virtual string Name
     {
         get
@@ -12,6 +18,9 @@ public class InventoryItemBase : MonoBehaviour, IInventoryItem
         }
     }
 
+    /// <summary>
+    /// the icon for the item in inventory
+    /// </summary>
     public Sprite _Image;
     
     public Sprite Image
@@ -19,30 +28,19 @@ public class InventoryItemBase : MonoBehaviour, IInventoryItem
         get { return _Image; }
     }
 
+    /// <summary>
+    /// base for overrides
+    /// </summary>
     public virtual void OnUse()
     {
 
     }
 
+    /// <summary>
+    /// set object to inactive when picked up
+    /// </summary>
     public virtual void OnPickup()
     {
         gameObject.SetActive(false);
     }
-
-    public virtual void OnDrop()
-    {
-        // change stuff
-        RaycastHit hit = new RaycastHit();
-
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-        if (Physics.Raycast(ray, out hit, 1000))
-        {
-            gameObject.SetActive(true);
-            gameObject.transform.position = hit.point;
-        }
-    }
-
-    public Vector3 PickPosition;
-    public Vector3 PickRotation;
 }
