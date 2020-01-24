@@ -2,21 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// this class allows us to control the lock in a lockpad
+/// </summary>
 public class LockController : MonoBehaviour
 {
+    /// <summary>
+    /// get the codeLock
+    /// </summary>
     CodeLock codeLock;
 
+    /// <summary>
+    /// range for where mouse reaches
+    /// </summary>
     int reachRange = 100;
     
 
     void Update()
     {
+        // when mouse pressed check if the object was hit
         if(Input.GetMouseButtonDown(0))
         {
             CheckHitObj();
         }
     }
 
+    /// <summary>
+    /// check if object was hit
+    /// </summary>
     void CheckHitObj()
     {
         RaycastHit hit;
@@ -24,7 +37,7 @@ public class LockController : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, reachRange))
         {
-            codeLock = hit.transform.gameObject.GetComponentInParent<CodeLock>();//Witch codelock is beeing pressed
+            codeLock = hit.transform.gameObject.GetComponentInParent<CodeLock>();
 
             if (codeLock != null)
             {

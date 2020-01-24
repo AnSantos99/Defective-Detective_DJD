@@ -2,71 +2,150 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// this class let's us control our current player's inventory
+/// </summary>
 public class PlayerInventory : MonoBehaviour
 {
+    /// <summary>
+    /// gets inventory from scene
+    /// </summary>
     public Inventory inventory;
 
+    /// <summary>
+    /// let's us place objects for view and rotate in front of player
+    /// </summary>
     public GameObject Hand;
 
+    /// <summary>
+    /// item in hand
+    /// </summary>
     public GameObject GoItem;
 
+    /// <summary>
+    /// check if rotation script is active
+    /// </summary>
     private bool RotActive;
 
+    /// <summary>
+    /// view controller to set panels
+    /// </summary>
     public ViewController vc;
 
+    /// <summary>
+    /// hub to toggle and control inventory
+    /// </summary>
     public HUB hub;
 
+    /// <summary>
+    /// call dead chicken prefab
+    /// </summary>
     public GameObject Elmo;
 
+    /// <summary>
+    /// get broom to fall down
+    /// </summary>
     public GameObject Broom;
 
+    /// <summary>
+    /// get doors
+    /// </summary>
     public GameObject DoorStorage;
 
     public GameObject DoorZen;
 
     public GameObject DoorLivingRoom;
 
+    /// <summary>
+    /// get door trigger
+    /// </summary>
     public TriggerDoorLock trigger;
 
+    /// <summary>
+    /// to open door
+    /// </summary>
     public int counter = 0;
 
+<<<<<<< HEAD
     private IInventoryItem mCurrentItem = null;
-
+    
+    public DiferentDialogues dd;
+=======
+    /// <summary>
+    /// getting random dialogue
+    /// </summary>
     RandomDialogues rD;
+>>>>>>> 677865a46e1a977ba57e1a016d889c2bc03774ca
+
+    /// <summary>
+    /// check if door is closed, open and if broom is falling
+    /// </summary>
+    public bool doorClosed;
+    public bool doorOpen;
+    public bool broomFall;
+    public bool s_1;
+    public bool s_2;
 
     private void Start()
     {
+        // getting event
         inventory.ItemUsed += Inventory_ItemUsed;
+<<<<<<< HEAD
         RotActive = true;
+        s_1 = true;
+=======
+
+        // set rotation to true
+        RotActive = false;
+>>>>>>> 677865a46e1a977ba57e1a016d889c2bc03774ca
     }
 
+    /// <summary>
+    /// activate or deactivate rotation
+    /// </summary>
+    /// <param name="rotActive"></param>
     public void Activate(bool rotActive)
     {
-        RotActive= rotActive;
+        RotActive = rotActive;
     }
 
     private void Update()
+<<<<<<< HEAD
+    {
+
+=======
     {      
+        // checking if player has untoggled rotation
+>>>>>>> 677865a46e1a977ba57e1a016d889c2bc03774ca
         if (Input.GetKeyDown(KeyCode.R) || !RotActive && GoItem != null)
         {
+            // disable item
             GoItem.SetActive(false);
 
+            // enable script
             GoItem.GetComponent<RotateObject>().enabled = true;
 
+            // set rotactive to true
             RotActive = true;
         }
     }
 
+    /// <summary>
+    /// this method let's us check when item is being used
+    /// </summary>
     private void Inventory_ItemUsed(object sender, InventoryEventArgs e)
     {
+        // get itemm from inventory event
         IInventoryItem item = e.Item;
 
+        // current item
         GameObject goItem;
 
+        // check item's name for password actions toggle
         if (item.Name == "passwordReader")
         {
+            // set item as monobehaviour for manipulation
             goItem = (item as MonoBehaviour).gameObject;
-
             item.OnUse();
             goItem = null;
         }
@@ -79,9 +158,12 @@ public class PlayerInventory : MonoBehaviour
             GoItem = goItem;
             Broom.GetComponent<Animator>().SetBool("Fall", true);
             DoorStorage.GetComponent<Animator>().SetBool("DoorOpen", true);
-            // he hears broom and we activate sound!!!!
+            broomFall = true;
+
+            //FindOjbectOfType<AudioSource>().Play("Fallingbroom");
         }
 
+        // for items without problems
         else
         {
             goItem = (item as MonoBehaviour).gameObject;
@@ -89,17 +171,18 @@ public class PlayerInventory : MonoBehaviour
             goItem.SetActive(true);
             goItem.GetComponent<RotateObject>().enabled = true;
             goItem.transform.parent = Hand.transform;
-            goItem.transform.localPosition = (item as InventoryItemBase).PickPosition;
-            goItem.transform.localEulerAngles = (item as InventoryItemBase).PickRotation;
+            goItem.transform.localPosition = 
+                (item as InventoryItemBase).PickPosition;
+            goItem.transform.localEulerAngles = 
+                (item as InventoryItemBase).PickRotation;
 
             GoItem = goItem;
         }
 
         GoItem = goItem;
-
     }
 
-    // Start is called before the first frame update
+    // check collision for toggle of hub
     void OnTriggerEnter(Collider other)
     {
         hub.OpenMessagePanel("");
@@ -111,7 +194,7 @@ public class PlayerInventory : MonoBehaviour
         hub.CloseMessagePanel();
     }
 
-    // Start is called before the first frame update
+    // check collision for actions depending on the type of interactable
     void OnTriggerStay(Collider other)
     {
         IInventoryItem item = other.GetComponent<IInventoryItem>();
@@ -122,24 +205,15 @@ public class PlayerInventory : MonoBehaviour
         if (item != null && other.tag == "ZamazonKit")
         {
             trigger.GetComponent<BoxCollider>().enabled = true;
+            doorClosed = true;
             if (Input.GetKeyDown(KeyCode.F))
             {
                 vc.ToggleKit(false);
                 vc.InventoryIsActive = true;
-<<<<<<< HEAD
-                Instantiate(Elmo, tPosition, tRotation);
-
-                //change of 'scene'
-                if(rD.Scene_1 == true)
-                {
-                    rD.Scene_1 = false;
-                    rD.Scene_2 = true;
-                }
-            }
-=======
                 Instantiate(Elmo);
-            }       
->>>>>>> a438f77fee7b9308dacb12662a3f9789a195cb2c
+                s_1 = false;
+                s_2 = true;
+            }
         }
 
         if(vc.InventoryIsActive == true) 
@@ -155,6 +229,7 @@ public class PlayerInventory : MonoBehaviour
                 }
             }
 
+            // check if interacting with touchable items
             if (item != null && other.tag == "Touchable")
             {
                 if (Input.GetKeyDown(KeyCode.F))
@@ -163,9 +238,8 @@ public class PlayerInventory : MonoBehaviour
                     item.OnUse();
                 }
             }
-
           
-
+            // check if interacting with images
             if (item != null && other.tag == "PictureClues")
             {
                 counter+=1;
@@ -189,6 +263,7 @@ public class PlayerInventory : MonoBehaviour
             if(counter >= 4)
             {
                 DoorLivingRoom.GetComponent<Animator>().SetBool("DoorOpen", true);
+                doorOpen = true;
             }
 
         }

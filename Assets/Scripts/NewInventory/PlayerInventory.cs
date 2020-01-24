@@ -68,8 +68,7 @@ public class PlayerInventory : MonoBehaviour
 
     /// <summary>
     /// getting random dialogue
-    /// </summary>
-    RandomDialogues rD;
+    public DiferentDialogues dd;
 
     /// <summary>
     /// check if door is closed, open and if broom is falling
@@ -77,12 +76,15 @@ public class PlayerInventory : MonoBehaviour
     public bool doorClosed;
     public bool doorOpen;
     public bool broomFall;
+    public bool s_1;
+    public bool s_2;
 
     private void Start()
     {
         // getting event
         inventory.ItemUsed += Inventory_ItemUsed;
 
+        s_1 = true;
         // set rotation to true
         RotActive = false;
     }
@@ -97,7 +99,7 @@ public class PlayerInventory : MonoBehaviour
     }
 
     private void Update()
-    {      
+    {
         // checking if player has untoggled rotation
         if (Input.GetKeyDown(KeyCode.R) || !RotActive && GoItem != null)
         {
@@ -193,13 +195,8 @@ public class PlayerInventory : MonoBehaviour
                 vc.ToggleKit(false);
                 vc.InventoryIsActive = true;
                 Instantiate(Elmo);
-
-                //change of 'scene'
-                if(rD.Scene_1 == true)
-                {
-                    rD.Scene_1 = false;
-                    rD.Scene_2 = true;
-                }
+                s_1 = false;
+                s_2 = true;
             }
         }
 
