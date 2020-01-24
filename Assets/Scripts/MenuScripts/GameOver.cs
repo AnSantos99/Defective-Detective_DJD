@@ -12,8 +12,12 @@ public class GameOver : MonoBehaviour
     /// <summary>
     /// the game over panel
     /// </summary>
-    public GameObject gameOver;
     [SerializeField] string gameOverScene;
+
+    void Start()
+    {
+        OnTriggerEnter();
+    }
 
     void OnTriggerEnter()
     {

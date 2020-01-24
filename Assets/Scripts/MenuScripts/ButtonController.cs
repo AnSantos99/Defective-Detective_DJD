@@ -9,8 +9,6 @@ public class ButtonController : MonoBehaviour
 
     [SerializeField] GameObject MainPanel;
 
-    [SerializeField] GameObject SettingsPanel;
-
     [SerializeField] GameObject InstructionsPanel;
 
     [SerializeField] GameObject CreditsPanel;
@@ -18,7 +16,6 @@ public class ButtonController : MonoBehaviour
     public void Awake()
     {
         MainPanel.SetActive(true);
-        SettingsPanel.SetActive(false);
         InstructionsPanel.SetActive(false);
         CreditsPanel.SetActive(false);
     }
@@ -26,18 +23,6 @@ public class ButtonController : MonoBehaviour
    public void ButtonStart()
     {
         SceneManager.LoadScene(FirstSceneName);
-    }
-
-    public void ButtonSettingsOpen()
-    {
-        SettingsPanel.SetActive(true);
-        MainPanel.SetActive(false);
-    }
-
-    public void ButtonSettingsClose()
-    {
-        MainPanel.SetActive(true);
-        SettingsPanel.SetActive(false);
     }
 
     public void ButtonInstructionsOpen()

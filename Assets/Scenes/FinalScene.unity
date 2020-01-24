@@ -767,15 +767,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9055bce393d7e6d4c9315b9beaed41bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
-  type: 0
-  inventoryName: image 1
-  inventoryIcon: {fileID: 21300000, guid: da4abf9ccb149f84cba494ec4b3e08bf, type: 3}
-  requirementText: 
-  interactionText: 
-  inventoryRequirements: []
-  activationChain: []
-  interactionChain: []
 --- !u!212 &52809992
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6708,8 +6699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92d18f4ef2edb7741b1af06c6eea4b3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOver: {fileID: 0}
-  gameOverScene: 
+  gameOverScene: GameOver
 --- !u!65 &474150925
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6718,7 +6708,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 474150923}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -6731,7 +6721,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 474150923}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.133, y: 0.434, z: 0.372}
+  m_LocalPosition: {x: -2.133, y: 0.434, z: 0.477}
   m_LocalScale: {x: 1, y: 1, z: 0.22884}
   m_Children: []
   m_Father: {fileID: 0}
@@ -9729,15 +9719,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9055bce393d7e6d4c9315b9beaed41bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
-  type: 3
-  inventoryName: 
-  inventoryIcon: {fileID: 0}
-  requirementText: 
-  interactionText: 
-  inventoryRequirements: []
-  activationChain: []
-  interactionChain: []
 --- !u!114 &668221651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9975,17 +9956,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8952456d0010bc94e8fd659c5b078f58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionPanel: {fileID: 342531438}
-  interactionText: {fileID: 1331987988}
-  inventoryIcons:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &673021598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16635,7 +16605,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37a0eb78bf058954aa6d0a217aab084d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasManager: {fileID: 673021597}
 --- !u!65 &1176397199
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26940,15 +26909,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9055bce393d7e6d4c9315b9beaed41bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
-  type: 3
-  inventoryName: 
-  inventoryIcon: {fileID: 0}
-  requirementText: 
-  interactionText: 
-  inventoryRequirements: []
-  activationChain: []
-  interactionChain: []
 --- !u!65 &1981420487
 BoxCollider:
   m_ObjectHideFlags: 0
