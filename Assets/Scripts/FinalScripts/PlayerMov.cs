@@ -26,6 +26,7 @@ public class PlayerMov : MonoBehaviour
 
    private Animator _animator;
 
+
     private void Awake()
     {
         charController = GetComponent<CharacterController>();
@@ -51,6 +52,10 @@ public class PlayerMov : MonoBehaviour
         {
             FindObjectOfType<SoundManager>().Stop("Steps");
         }
+        //if(Input.GetKeyUp("w") && Input.GetKeyUp("a") && Input.GetKeyUp("s") && Input.GetKeyUp("d"))
+        //{
+        //    FindObjectOfType<SoundManager>().Stop("Steps");
+        //}
     }
 
     private void PlayerMovement()

@@ -82,14 +82,12 @@ public class PlayerInventory : MonoBehaviour
         if (item.Name == "book")
         {
             goItem = (item as MonoBehaviour).gameObject;
-
+            FindObjectOfType<SoundManager>().Play("Pagebook");
             vc.ToggleInventory(true);
             GoItem = goItem;
             Broom.GetComponent<Animator>().SetBool("Fall", true);
-            //FindObjectOfType<SoundManager>().Play("Pagebook"); //NEW
             DoorStorage.GetComponent<Animator>().SetBool("DoorOpen", true);
             broomFall = true;
-            FindObjectOfType<SoundManager>().Play("Pagebook");
         }
 
         else
@@ -193,7 +191,6 @@ public class PlayerInventory : MonoBehaviour
             {
                 DoorLivingRoom.GetComponent<Animator>().SetBool("DoorOpen", true);
                 doorOpen = true;
-                FindObjectOfType<SoundManager>().Play("DoorOpen");
             }
 
         }

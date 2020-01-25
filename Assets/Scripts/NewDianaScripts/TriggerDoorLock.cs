@@ -9,7 +9,9 @@ public class TriggerDoorLock : MonoBehaviour
     void OnTriggerEnter()
     {
         Door.GetComponent<Animator>().SetBool("DoorOpen", false);
+        Debug.Log("Close it now!");
+        FindObjectOfType<SoundManager>().Stop("DoorLock");
 
-      //  Destroy();
+        //  Destroy();
     }
 }

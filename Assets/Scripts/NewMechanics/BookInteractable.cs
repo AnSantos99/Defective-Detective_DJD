@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class BookInteractable : InventoryItemBase
@@ -65,7 +64,6 @@ public class BookInteractable : InventoryItemBase
         viewScript.ToggleBookPanel(false);
         NotesAdder.SetNotes("note");
         NotesAdder.SetNotes("note1");
-        FindObjectOfType<SoundManager>().Play("Pagebook"); //NEW
     }
 
     void Update()

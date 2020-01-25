@@ -4165,13 +4165,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: Steps
-    clip: {fileID: 8300000, guid: 1375992f95b7bec4b8fc315c3e6a77a7, type: 3}
+    clip: {fileID: 8300000, guid: 271232da4bfb2474e98a1b113960542c, type: 3}
     audioMixer: {fileID: 24300002, guid: d230417ef8ef0744cba5fbfe150f5892, type: 2}
-    volume: 1
+    volume: 0.435
     loop: 1
     source: {fileID: 0}
   - name: Pickup
-    clip: {fileID: 8300000, guid: c3c352f8d567e8745a226684e513d931, type: 3}
+    clip: {fileID: 8300000, guid: ebcf0225a5df77040a337c9d75eee259, type: 3}
     audioMixer: {fileID: 0}
     volume: 1
     loop: 0
@@ -4183,49 +4183,43 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: CodeRight
-    clip: {fileID: 8300000, guid: dd035d2764de15e448379dbc353e989e, type: 3}
+    clip: {fileID: 8300000, guid: 35fb2d33ac6a0ed4c8eb8894189f779f, type: 3}
     audioMixer: {fileID: 24300002, guid: 80d3cd322a1febc40b07f726061dd8c7, type: 2}
     volume: 1
     loop: 0
     source: {fileID: 0}
   - name: CodeZRight
-    clip: {fileID: 8300000, guid: 682d8363a12acb24aa2f4f8002df02eb, type: 3}
+    clip: {fileID: 8300000, guid: 1fed865a6f8683846bf45334ccc7a792, type: 3}
     audioMixer: {fileID: 0}
     volume: 1
     loop: 0
     source: {fileID: 0}
-  - name: Pageboock
-    clip: {fileID: 8300000, guid: 17e7c2704c1cb94498922093e0b30185, type: 3}
+  - name: Pagebook
+    clip: {fileID: 8300000, guid: da77573444a7c1a44871af1cc7353e07, type: 3}
     audioMixer: {fileID: 0}
-    volume: 1
+    volume: 0.556
     loop: 0
     source: {fileID: 0}
-  - name: Notes
-    clip: {fileID: 8300000, guid: a435197f576cdb044b072323b048bf99, type: 3}
+  - name: DoorOpen
+    clip: {fileID: 8300000, guid: fdf976fc2c3e0254c9bd93eba2af3473, type: 3}
     audioMixer: {fileID: 0}
     volume: 1
     loop: 0
     source: {fileID: 0}
   - name: DoorLock
-    clip: {fileID: 8300000, guid: c90f04d20c59c2948bd1b1b90cb3efef, type: 3}
+    clip: {fileID: 8300000, guid: 6f9810b0a2dd0904ba3c948108d6a694, type: 3}
     audioMixer: {fileID: 0}
     volume: 1
     loop: 0
     source: {fileID: 0}
   - name: Fallingbroom
-    clip: {fileID: 8300000, guid: bac7b6af41e3bc94496179a786d942f1, type: 3}
+    clip: {fileID: 8300000, guid: 364ff245113c3824b8d93dfdf8266536, type: 3}
     audioMixer: {fileID: 0}
-    volume: 1
+    volume: 0.447
     loop: 0
     source: {fileID: 0}
   - name: Dialogue
-    clip: {fileID: 8300000, guid: 32a0d96dcd74d194282e8af23da44167, type: 3}
-    audioMixer: {fileID: 0}
-    volume: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: DoorOpen
-    clip: {fileID: 8300000, guid: fd4f791476163e54da3e0c0f2c5631f4, type: 3}
+    clip: {fileID: 8300000, guid: f18549191463b9e4f91f0cb7699b483a, type: 3}
     audioMixer: {fileID: 0}
     volume: 1
     loop: 0
@@ -16522,6 +16516,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   jumpMultiplier: 10
   jumpKey: 32
+  isWalking: 0
 --- !u!114 &1176397201
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -29,16 +29,19 @@ public class inputReader : MonoBehaviour
     {
         if (input.text == "zen is beautiful")
         {
+            FindObjectOfType<SoundManager>().Play("CodeZRight");
             input.text = "";
             doorAnim.SetBool("DoorOpen", true);
+            FindObjectOfType<SoundManager>().Play("DoorOpen");
             viewScript.passwordCorrect = true;
-            viewScript.ToggleInputPanel(false);    
+            viewScript.ToggleInputPanel(false);
         }
 
         else
         {
             viewScript.ToggleInputPanel(false);
             StartCoroutine(ShowWrongInputMessage());
+            FindObjectOfType<SoundManager>().Play("CodeWrong");
         }
     }
 
